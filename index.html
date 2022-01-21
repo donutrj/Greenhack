@@ -1,0 +1,1504 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Rolland C" />
+  <title>Greenhack</title>
+  <style>
+    
+  .sidenav {
+    height: 100%;
+    width: 300px;
+    position: fixed;
+    z-index: 1;
+    top: 2;
+    left: 0;
+    background-color: #fdfdfd;
+    overflow-x: hidden;
+    padding-top: 0px;
+  }
+
+  .sidenav a {
+    padding: 6px 8px 6px 20px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #1a1a1a;
+    display: block;
+  }
+
+  .sidenav ak {
+    padding: 6px 8px 6px 40px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #1a1a1a;
+    display: block;
+  }
+
+  .sidenav a:hover {
+    color: #22b374;
+  }
+
+  .sidenav aa:hover {
+    color: #22b374;
+  }
+
+
+
+
+
+
+
+
+
+
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<div class="sidenav">
+  <strong><a href="#the-character">Characters</a></strong>
+  <a href="#progression">Progression</a>
+  <strong><a href="#mechanics">Mechanics</a></strong>
+  <a href="#combat">Combat</a>
+  <strong><a href="#inventory">Inventory</a>
+  <a href="#hirelings">Hirelings</a>
+  <a href="#travel">Travel</a></strong>
+  <a href="#abreast-the-sea">Abreast the Sea</a>
+  <a href="#upon-the-land">Upon the Land</a>
+  <a href="#beneath-the-earth">Beneath the Earth</a>
+  <strong><a href="#spellcraft">Spellcraft</a></strong>
+  <a href="#casting-a-spell">Casting a Spell</a>
+  <a href="#gods-and-their-spells">Gods and Their Spells</a>
+  <a href="#tall-gods">Tall Gods</a>
+  <a href="#becoming-an-pactmage">Becoming a Pactmage</a>
+  <strong><a href="#monsters">Monsters</a></strong>
+  <a href="#sample-monsters">Sample Monsters</a>
+  <strong><a href="#equipment">Equipment</a></strong>
+</div>
+
+
+
+<header id="title-block-header">
+<h1 class="title">Greenhack</h1>
+<p class="subtitle">1.16</p>
+<p class="author">Rolland C</p>
+</header>
+<h1 id="the-character">Characters</h1>
+<p>Characters in Greenhack are human. In debt and often on the run they search for ways to finance their existance.</p>
+<h3 id="attributes">Attributes</h3>
+<p>Attributes are used when characters take an action.<br />
+There are four attributes: Strength, Agility, Mind &amp; Soul.<br />
+Roll d4-d4 for each stat.<br />
+All dice are rolled in sequence. No choosing which stats go where.<br />
+When creating a character, if all stats are equal, reroll them.</p>
+<h3 id="saves">Saves</h3>
+<p>Saves are used when things happen to characters.<br />
+There are four saves: Physique, Dodging, Presence &amp; Warding.<br />
+Physique starts at 12. If Strength is 3+ Physique is reduced to 11. The inverse is true at 3-.<br />
+Dodging starts at 12. If Agility is 3+, Dodging is reduced to 11. The inverse is true at 3-.<br />
+Presence starts at 15. If Mind is 3+, Presence is reduced to 14. The inverse is true at 3-.<br />
+Warding starts at 17. If Souls is 3+, Warding is reduced to 16. The inverse is true at 3-.</p>
+<h3 id="hit-protection">Hit Protection</h3>
+<p>Hit Protection (HP) represents a character’s ability to avoid injury in a fight. Once reduced to 0, the character is injured and out of the fight.<br />
+Maximum HP cannot exceed 18.<br />
+Starting HP is equal ot 3d4.</p>
+<h3 id="skills">Skills</h3>
+<p>List three non-combative skills the character has. These may come uo during play to provide advantage in relevent cases.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Sample Skills</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Butchery</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Carpentry</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Fishing</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Horsemanship</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Preformance</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Scrounging</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Weaving</td>
+</tr>
+</tbody>
+</table>
+<h3 id="language">Language</h3>
+<p>Start knowing d3 languages to be proficient at. If you select the same language twice you can speak <em>and</em> write in it.<br />
+A language can be half know, this being enough ot conduct trade.<br />
+All characters must share at least one half known language.<br />
+Language slots can be held in reserve, although a character must declare they knoa a language the first time it is encountered. Some languages cannot be know this way.</p>
+<h3 id="money">Money</h3>
+<p>Roll 10d6 silver exploding (for each 6 rolled, roll that die again and add to the total rolled. Keep doing that until you roll no more 6s) With the money purchase items from the back of the zine.</p>
+<h2 id="progression">Progression</h2>
+<p>Character progression in Greenahck is minimal when compared to the likes of 5e. Characters after all are only human.</p>
+<h3 id="boasts">Boasts</h3>
+<p>A Character who makes a Boast of Heroic Proportions either gains d6 maximum HP or +1 to any Attribute in addition to any wager or reward offered by others.<br />
+If they are found to shirk their Boast, they lose the HD or Attack Bonus and may never again Boast.<br />
+Those failing the Boast lose the HD or Attack Bonus, but may try again or make another Boast.<br />
+Only one Boast per character can be pending at a time.</p>
+<h3 id="feats">Feats</h3>
+<p>Mutations, feats, call them what you will. As characters adventure they take on feats. Feats help define a character’s specialty and give them little exceptions to the rules.</p>
+<ul>
+<li><strong>Adrenaline:</strong></li>
+<li><strong>Ambidextrous:</strong> Allows the reload action to reload multiple held weapons.</li>
+<li><strong>Assailant:</strong> Whether your side passes or fails the initiative roll, you may always act first if your action involves inflicting harm.</li>
+<li><strong>Beastface:</strong></li>
+<li><strong>Blade Seer:</strong></li>
+<li><strong>Bloodless:</strong></li>
+<li><strong>Bulwark:</strong> Explosions cause half damage.</li>
+<li><strong>Conduit:</strong> Roll twice for lost HP when casting and keep either.</li>
+<li><strong>Dauntless:</strong></li>
+<li><strong>Declaw:</strong> Natural weapons - punches, claws, stingers - deal half damage to the character.</li>
+<li><strong>Frontiersman:</strong></li>
+<li><strong>Gator Legs:</strong> Navigate calm waters as though it was a simple as walking.</li>
+<li><strong>Ghoul:</strong> When you kill an enemy regain 1d3 HP.</li>
+<li><strong>Greyhound:</strong> Move an additional 5’ for Agility Actions in combat.</li>
+<li><strong>Herbalist:</strong></li>
+<li><strong>Hornskin:</strong> Reduce blunt damage by 1d2 before armor.</li>
+<li><strong>Hundred Hands:</strong> The character can roll twice and choose the better when searhing through their pack.</li>
+<li><strong>Iron Sharpshooter:</strong> Spend all actions in a turn to shoot a black powder weapon with advantage.</li>
+<li><strong>Kiteskin:</strong> Damage from falling is halved.</li>
+<li><strong>Lightfoot:</strong> Rolls for sneaking are nade at advantage.</li>
+<li><strong>Magpie:</strong> Picking things up does not require an Agility Action in combat.</li>
+<li><strong>Mithridatist:</strong></li>
+<li><strong>Necromancer:</strong></li>
+<li><strong>Packmule:</strong> Increase total inventory slots to 18.</li>
+<li><strong>Piper:</strong> You speak with rats: whistling allows you to attract d4 of them. They might not have reliable information but are always happy to converse.</li>
+<li><strong>Pitcher:</strong></li>
+<li><strong>Poacher:</strong></li>
+<li><strong>Poison Sense:</strong></li>
+<li><strong>Quartermaster:</strong> Roll usage dice with advantage.</li>
+<li><strong>Resilience:</strong> When you succeed a Death’s Door Test, roll d6 for regained HP.</li>
+<li><strong>Salveskin:</strong> Reduce fire damage by 1d2 before armor.</li>
+<li><strong>Serpent:</strong> Advantage when trying to convince someone to do something against their best interest.</li>
+<li><strong>Silent Killer:</strong> Advantage when attacking an unaware victim with a melee weapon.</li>
+<li><strong>Steady Aim:</strong> Spend an action to gain advantage when shooting a weapon.</li>
+<li><strong>Steeled:</strong> A character suffers no penalty when casting a spell within Arm’s-reach of the enemies.</li>
+<li><strong>Tomahawk:</strong> Throw melee weapons for original weapon’s damage value.</li>
+<li><strong>Vigilant:</strong> You can never be the civtim of a surprise attack. Additionally, your side takes initiative on a 3+.</li>
+<li><strong>Vigor:</strong></li>
+<li><strong>Vulture:</strong> Roll twice when looting bodies.</li>
+<li><strong>Whispersmith:</strong></li>
+</ul>
+<h1 id="mechanics">Mechanics</h1>
+<p>When the outcome of a character action is unclear, risky, or contested, the character uses an Attribute to make a Test.<br />
+To make a Test, roll a d20 and add the Attribute to the result. If the number is equal to or greater than the Difficulty Rating (DC) of the Test, the character succeeds.<br />
+When the character is effected by the outside world, they make a Save.<br />
+To make a Save, roll a d20; attempting to equal or best the Save’s value.</p>
+<h3 id="the-attributes">The Attributes</h3>
+<p><strong>Strength</strong> represents the character’s might, focus, and muscle power.<br />
+<strong>Agility</strong> represents the character’s speed and nimbleness.<br />
+<strong>Mind</strong> represents the character’s wit and knowledge.<br />
+<strong>Soul</strong> represents a character’s willpower, leadership, and compassion.</p>
+<h3 id="the-saves">The Saves</h3>
+<p><strong>Physique</strong> represents the characters resilience and endurance.<br />
+<strong>Dodging</strong> represents the character’s ability to avoid danger through movement.<br />
+<strong>Presence</strong> represents the character’s awareness and critical thinking.<br />
+<strong>Warding</strong> represents the character’s ability to resist magical effects.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Saves’s Uses</th>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Physique</td>
+<td style="text-align: left;">Resisting Poison</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Physique</td>
+<td style="text-align: left;">Climbing</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Dodging</td>
+<td style="text-align: left;">Avoiding attacks</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Dodging</td>
+<td style="text-align: left;">Jumping to safety ehhhh</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Presence</td>
+<td style="text-align: left;">Noticing secret rooms</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Presence</td>
+<td style="text-align: left;">Avoiding being conned</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Warding</td>
+<td style="text-align: left;">Resisting a spell’s effects</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Warding</td>
+<td style="text-align: left;">Cursed artifacts</td>
+</tr>
+</tbody>
+</table>
+<h3 id="critical-success">Critical Success</h3>
+<p>Critical Success (Crit) occures when you roll a natural 20. When you roll a Crit out of combat, the event goes better than anticipated.<br />
+When attacking in combat, roll twice the dice for damage. While defending, a critical allows you to attack back without using a Riposte (see weapons table).</p>
+<h3 id="critical-failure">Critical Failure</h3>
+<p>Critical Fail (Crit Fail) occurs when you roll a natural 1. Out of combat the Test or Save fails with added consequence. In combat, a critical failure when attacking leaves you Exposed until the start of youtr next turn. When defending it means you take double damage.</p>
+<h2 id="combat">Combat</h2>
+<h3 id="initiative">Initiative</h3>
+<p>In combat characters have fewer choices about what actions they can take. Combat is organized into Rounds of roughly 6 seconds where all parties have a Turn.<br />
+At the start of each Round and at the start of combat, a player rolls a d6. On a 4+ the roller’s Turn begins first. Otherwise an enemy’s goes first. The subsiquent Turn is chosen by the person currently taking a Turn.<br />
+A surpised party does not roll for the first round. They lose out on the initiative.</p>
+<h3 id="movement-ranges">Movement &amp; Ranges</h3>
+<p>Movement in greenhack is abstracted, Fights happen near enough to assume things are in range of projectile weapons. Perhaps something might call for a long shot, but targets are always with in firing range.<br />
+Importantly you need to know if you’re in arm’s-reach of someone, which permits the useage of melee weapons while impairing casting and shooting (Disadvantage).</p>
+<h3 id="actions">Actions</h3>
+<p>In Greenhack, characters get an Action for each Attribute. When it’s their turn, they can use any number of Actions as they see fit. You can sacrifice two actions to take a second action of te same stat. Anounce the sacrifced Attributes before rolling for the second Action.</p>
+<table>
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 81%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Combat Actions</th>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Strength</td>
+<td style="text-align: left;">Melee combat: Roll over the defender’s AC to hit</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Strength</td>
+<td style="text-align: left;">Throw something</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Agility</td>
+<td style="text-align: left;">Move around: move 25 feet, requres a Test if moving out of Arm’s-reach of a combatant. Halved in difficult terrain.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Agility</td>
+<td style="text-align: left;">Search pack: roll 2d6 and rearrange the pack to that depth. Can add subsiquent rolls to the inital to reach further</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Agility</td>
+<td style="text-align: left;">Pick something up</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Agility</td>
+<td style="text-align: left;">Reload a Loading weapon</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Mind</td>
+<td style="text-align: left;">Examine: With a sucessful DC12 Test learn something of interest about a target or object</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mind</td>
+<td style="text-align: left;">Activate an artifact or tome. See Spellcasting</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Soul</td>
+<td style="text-align: left;">Command: order a friendly to do something. On a successful DC12 Test, command a friendly to do a thing and they get +2 to the next time they attempt it</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Soul</td>
+<td style="text-align: left;">Negotiate: Attempt to talk with those you’re fighting</td>
+</tr>
+</tbody>
+</table>
+<h3 id="attacking-defending">Attacking &amp; Defending</h3>
+<p>Attacks are made by making the appropriate Test, rolling over the target’s AC. This is generally Strength for melee and mind for ranged. Modifers both negative and positive may be issued to the Test, depending on curcumstance. If sucessful, roll for damage.<br />
+If you miss with a ranged attack there is a 50% chance of hitting someone else within Arm’s-reach of the target.<br />
+When defending, roll a Dodging Save. This number is modified by armor and the usual things. If you fail, the GM will tell you how much damage you take; reduced by character’s armor.<br />
+Those caught unaware when attacked such as when ambushed can be killed when struck.</p>
+<h3 id="maneuvers">Maneuvers</h3>
+<p>When an attack is success and before damage is rolled, the attacker can present a choice to the defender. Either they take the damage, or the attacker preforms a maneuver. This could be anything from knowcking them down, blinding with sand, pinning them etc.<br />
+Players can force a maneuver by attacking with disadvantage and GM approval. This must be declared before the attack is rolled.</p>
+<h3 id="damage">Damage</h3>
+<p>When you take Damage reduce you HP the corresponding amount. If an attack would reduce yourt HP below 1, you’re on Death’s Door.<br />
+If damage is halved, round up</p>
+<h3 id="armor">Armor</h3>
+<p>Armor is used to reduce damage. Armor comes in three flavors; Light, Medium, and Heavy. As armor gets heavier, it blocks more damage, but make it harder to dodge attacks.<br />
+Armor cannot reduce damage reduce damage below 1.<br />
++ Shield: Damage -1, +1 to Dodge Saves + Light: Damage -d2, +1 to Dodge Saves + Medium: Damage -d4, +3 to Dodge Saves + Heavy: Damage -d8, +5 to Dodge Saves</p>
+<h3 id="deaths-door">Death’s Door</h3>
+<p>Roll a Soul Test DC(10+excess damage). If you succeed, your HP is a 1 and you’re still fighting. If you fail, you’re out of the fight. Reduce your Strength by the excess damage. If damage would reduce Strength below -5 your character is dead.</p>
+<h3 id="recovery">Recovery</h3>
+<p>With a swig of water and a snack, you can recover d6 HP in 10 minutes.<br />
+With a full night of restful sleep, recover all lost Strength and HP.</p>
+<h1 id="inventory">Inventory</h1>
+<p>In Greenhack inventory represents what characters are carrying. Each character has 14 slots, in order of accessibility. The first two are the character hands, often occupied with weapons. The buulkier the item, the more slots it requires.<br />
+Unwieldly items cannot be carried within an inventory.</p>
+<h3 id="in-combat">In Combat</h3>
+<p>A character can only use what they have in hand. This often means spending Agility actions to rummange for the item or potion in need. It is a free action to drop held items, but requires the Agility action to pick up or stoe items.</p>
+<h3 id="usage-dice">Usage Dice</h3>
+<p>Many items are consumable. When used or tested to see if they are consumed, roll a d6. If the result is a 1 the item has been consumed.</p>
+<h3 id="ammo">Ammo</h3>
+<p>Ammo uses the usage dice mechanic. Each time a weapon is used, see if the ammo slot has been expended.<br />
+Reloading is an exception to the rule. When a character spends their Agility action to reload, they don’t need the ammo in hand.</p>
+<h3 id="expedition-resources">Expedition Resources</h3>
+<p>Certain items are considered Expedition Resources. If one character is carrying a single quantity of the resource, there is a sufficient amount for the entire group. Creative uses of the resource trigger a roll that might deplete the resource.</p>
+<h1 id="hirelings">Hirelings</h1>
+<p>Hirelings take many forms but are most often used ot carry stuff. They follow because they are paid, which sometimes fluctuates depending on the risk they might be taking on.<br />
+Hirelings have stats like characters, can carry the same stuff as characters, and can preform the same actions.</p>
+<h3 id="types-or-hirelings">Types or Hirelings</h3>
+<p>Several types of hirelings can be employed. Below are some of the going rates of common hirelings.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Sample Hirelings</th>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Laborer</td>
+<td style="text-align: left;">1s</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Scribe</td>
+<td style="text-align: left;">2s</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Archer</td>
+<td style="text-align: left;">3s</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mason</td>
+<td style="text-align: left;">4s</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Man-at-arms, on foot</td>
+<td style="text-align: left;">6s</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Armorer or Blacksmith</td>
+<td style="text-align: left;">8s</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Man-at-arms, mounted</td>
+<td style="text-align: left;">12s</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Master Builder</td>
+<td style="text-align: left;">15s</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Barber-Surgeon</td>
+<td style="text-align: left;">25s</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Knight</td>
+<td style="text-align: left;">25s</td>
+</tr>
+</tbody>
+</table>
+<h3 id="adventuring-with-hirelings">Adventuring with Hirelings</h3>
+<p>Hirelings are controlled by the GM. When it comes ot combat or whathaveyou a player rolls 2d6 to determine their competence in the heat of action. a lower roll results in a more foolish action, while the latter a more effective action based on what the hireling is aware of.</p>
+<h1 id="travel">Travel</h1>
+<p>Hexes are assumed ot be 6 miles across.</p>
+<h2 id="abreast-the-sea">Abreast the Sea</h2>
+<p>Between the lands march whale-roads. The ships of the north are able to travel the deeper seas where no land may be seen, before snaking into rivers to find plunder inland. Others are bound to the coast, existence liminal.<br />
+Vessels have a default movement which is modified by wind-speed. Ships able to drop sails can elect to ignore such modifications and use only muscle-power.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Ship</th>
+<th style="text-align: left;">HD</th>
+<th style="text-align: left;">Speed</th>
+<th style="text-align: left;">Inventory</th>
+<th style="text-align: left;">Crew</th>
+<th style="text-align: left;">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Raft†</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">3 (3)</td>
+<td style="text-align: left;">20</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">10s</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Boat†</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">4 (4)</td>
+<td style="text-align: left;">40</td>
+<td style="text-align: left;">2-10</td>
+<td style="text-align: left;">50s</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Karvi†</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">6 (4)</td>
+<td style="text-align: left;">60</td>
+<td style="text-align: left;">8-24</td>
+<td style="text-align: left;">1000s</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Knarr</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">7 (3)</td>
+<td style="text-align: left;">100</td>
+<td style="text-align: left;">8-12</td>
+<td style="text-align: left;">2000s</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Snekkja†</td>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">8 (4)</td>
+<td style="text-align: left;">100</td>
+<td style="text-align: left;">20-50</td>
+<td style="text-align: left;">3000s</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Galley, Small</td>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">8 (3)</td>
+<td style="text-align: left;">160</td>
+<td style="text-align: left;">50</td>
+<td style="text-align: left;">5000s</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Galley, Large</td>
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">360</td>
+<td style="text-align: left;">120</td>
+<td style="text-align: left;">8000s</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Skeid†</td>
+<td style="text-align: left;">9</td>
+<td style="text-align: left;">9 (5)</td>
+<td style="text-align: left;">240</td>
+<td style="text-align: left;">60-80</td>
+<td style="text-align: left;">10000s</td>
+</tr>
+</tbody>
+</table>
+<p>Values given in parenthesis are for River travel. If sailing against the current, halve this number again. Those vessels marked with a † do not require a port - they are light enough to be beached. Smaller vessels can even be carried. These values are standard - loads are changed according to purpose.<br />
+Value is the ransom paid for the return of a captured vessel - triple this to pay for a new one. This is in addition to the value of any goods carried.</p>
+<h3 id="wind">Wind</h3>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">2d6</th>
+<th style="text-align: left;">Wind Strength</th>
+<th style="text-align: left;">Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">2-3</td>
+<td style="text-align: left;">Calm</td>
+<td style="text-align: left;">None</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4-8</td>
+<td style="text-align: left;">Light Breeze</td>
+<td style="text-align: left;">+1/+1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">9-11</td>
+<td style="text-align: left;">Strong Breeze</td>
+<td style="text-align: left;">+2/+1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">12</td>
+<td style="text-align: left;">Gale/Storm</td>
+<td style="text-align: left;">+3/+2</td>
+</tr>
+</tbody>
+</table>
+<p>Wind conditions persist for 1d6 days. Characters know of a storm 1 day before it arrives - roll Wind ahead of time.<br />
+Determine initial direction randomly. Then, each day, roll a d6.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">d6</th>
+<th style="text-align: left;">Direction Change</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1-2</td>
+<td style="text-align: left;">1 Direction ‘left’</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">3-4</td>
+<td style="text-align: left;">No change</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5-6</td>
+<td style="text-align: left;">1 Direction ‘right’</td>
+</tr>
+</tbody>
+</table>
+<p>If the Wind is behind the Vessel, increase the number of hexes travelled a day by the first value listed in the Wind Strength chart. If it is ’adjacent’ - 1 direction distant - add the second value. Otherwise, ignore the wind. (e.g. NE and NW both speed a vessel travelling North.)</p>
+<h3 id="storms">Storms</h3>
+<p>Vessels in a storm have a 30% chance of capsizing per day. Capsized vessels lose any loose cargo, and have a 40% chance of sinking before being righted by the crew.<br />
+All encounters with other ships are ignored.</p>
+<h3 id="becoming-lost">Becoming Lost</h3>
+<p>Characters may see into adjacent hexes. Mountains are visible from 4 hexes away. Weather conditions may hamper visibility.<br />
+When no landmark (e.g. coast, mountain, lighthouse) can be seen, characters have a 2-in-6 chance of becoming Lost if they have no Navigator. Hide any map and continue play without reference to it, until they are able to re-establish their location. Movement is in a random direction.<br />
+There is a 4-in-6 chance of becoming Lost during a Storm.</p>
+<h3 id="naval-encounters">Naval Encounters</h3>
+<p>Unless conditions are poor or there is a submarine element, encounters on Coasts and the Ocean are spotted at a distance of a hex. Reaction should be used for unknown groups.<br />
+If the curvature of the river is unknown, River encounters are spotted at 3d6*10’.<br />
+The tables below can be used where no regional encounter table has been prepared, although results will need modification. By default, there is a 1-in-6 chance of an encounter each day.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">d12</th>
+<th style="text-align: left;">River</th>
+<th style="text-align: left;">Coast</th>
+<th style="text-align: left;">Ocean</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">River Monster</td>
+<td style="text-align: left;">Sea Monster</td>
+<td style="text-align: left;">Seamonster</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Wreck</td>
+<td style="text-align: left;">Wreck</td>
+<td style="text-align: left;">Sea Monster</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Fishermen</td>
+<td style="text-align: left;">Wreck</td>
+<td style="text-align: left;">Wantering Isle</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Fishermen</td>
+<td style="text-align: left;">Fishermen</td>
+<td style="text-align: left;">Wandering Isle</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">Raiders</td>
+<td style="text-align: left;">Fishermen</td>
+<td style="text-align: left;">Merfolk</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">Pirates</td>
+<td style="text-align: left;">Raiders</td>
+<td style="text-align: left;">Merfolk</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">Pirates</td>
+<td style="text-align: left;">Raiders</td>
+<td style="text-align: left;">Fishermen</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">Patrol (local lord)</td>
+<td style="text-align: left;">Pirates</td>
+<td style="text-align: left;">Wreck</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">9</td>
+<td style="text-align: left;">Patrol (local lord)</td>
+<td style="text-align: left;">Pirates</td>
+<td style="text-align: left;">Raiders</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">Merchants</td>
+<td style="text-align: left;">Patrol (local lord)</td>
+<td style="text-align: left;">Raiders</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">11</td>
+<td style="text-align: left;">Merchants</td>
+<td style="text-align: left;">Merchants</td>
+<td style="text-align: left;">Pirates</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">12</td>
+<td style="text-align: left;">Merchants</td>
+<td style="text-align: left;">Merchants</td>
+<td style="text-align: left;">Merchants</td>
+</tr>
+</tbody>
+</table>
+<p>Merchants, Patrols and Pirates in Rivers use Boats and local equivalents of Karvi. Upon the Ocean, any vessel could be found.<br />
+Raiders use Karvi, Snekkja and Skeid.</p>
+<h3 id="naval-combat">Naval Combat</h3>
+<p>Naval combat is conducted in 1 minute turns.<br />
+Artillery and sea-monsters may attack ships directly. Characters must instead rely upon fire or boarding.<br />
+Melee attacks against vessels automaticallly hit. Ranged weapons hit on a DC10 test. Advantage if shooting from land. Hand weapons deal no damage - artillery and the strength of the monsters is sufficient to deal damage. If a 6+ is rolled for damage the boat may begin sinking.<br />
+Fire deals d6damage. If a 1 is rolled, the fire reduces in size - roll one dice less next round. If a 6 is rolled the fire has increased in size - now roll 2d6 for damage.</p>
+<h3 id="rounds-and-turn-order">Rounds and Turn Order</h3>
+<p>Rounds represent roughly a 1 minute frame of time, in which all participants get a turn. Like regular combat, each side rolls a d6 at the start of each round and the side that rolls higher goes first.</p>
+<h3 id="ramming">Ramming</h3>
+<p>Ships in this era are not designed for ramming. A ship performing a ram takes d6 damage. It deals each remaing HD to the target. If a 6 is rolled on a damage dice, that shup may begin sinking.</p>
+<h3 id="boarding">Boarding</h3>
+<p>Characters may leap from one vessel to the next as part of boarding; This requires a DC12 Agility Test. Combat is then had on the vessel. Note this means 10 ‘normal’ Rounds of combat happen per each naval Round.</p>
+<h3 id="sinking">Sinking</h3>
+<p>When a vessel may begin sinking, roll a d6. On a 1-3 it begins sinking. On a 4-6 it is fine. This process takes 3d6 Rounds. If half the crew works to save the vessel, it might (70% chance) avoid the fate. This takes 1d6 Rounds, and cannot be done if under attack.<br />
+Any further Sinking result halves the time left before the vessel sinks.</p>
+<h3 id="drowning">Drowning</h3>
+<p>Characters must roll a Physique Save to avoid drowning.</p>
+<h2 id="upon-the-land">Upon the Land</h2>
+<p>Most kings survey their entire dominion by eye on a clear day. Empire has broken under it’s own weight; struggles are local even as threads of trade and exchange ware woeven over the months of sailing. Isles weighed down by fen and bog know the spices of desert lands. All know the best steel is in the south and that the silver pennies with holes in the center are accept in all ports. Ruins stud the landscapes, and many halls lie haunted.</p>
+<h3 id="travel-1">Travel</h3>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Method of Travel</th>
+<th style="text-align: left;">Speed</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">On foot</td>
+<td style="text-align: left;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Wagons/Carts</td>
+<td style="text-align: left;">3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Horeseback</td>
+<td style="text-align: left;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Horses, Ridden to Death†</td>
+<td style="text-align: left;">6</td>
+</tr>
+</tbody>
+</table>
+<p>†<em>Horses Ridden to Death have a 2/6 change of dying each day, and are useless by the end of the journy.</em> Inclement terrain (thick woods, bogs, and mountains) lacking a road halves movement - round fractions down.</p>
+<h3 id="becoming-lost-1">Becoming Lost</h3>
+<p>From a good vantage point, characters may see into adjacent hexes. Mountains are visible from 4 hexes away.<br />
+Weather conditions may hamper visiblilty.<br />
+When no landmark (e.g. mountains, hill, road, town) can be seen, character have a 2/6 chance of becoming Lost. Deserts and Swamps increase this to a 3/6 chance. Hid any map and countinue play without reference to it, until they are able to re-establish their location.<br />
+Movement is in a random direction.</p>
+<h3 id="encounter">Encounter</h3>
+<p>Every 12 hours, an Encounter roll should be made on a chart prepared for the area.<br />
+In the case of an Encounter, consider if either party isaware of the other - factor such as light and sound being major determinants. Unaware parties are surprised 2/6 of the time.<br />
+If a group is surprised, encounters begin with parties d6<em>10’ away. Otherwise, 2d6</em>10’. Both groups can be surprised.</p>
+<h2 id="beneath-the-earth">Beneath the Earth</h2>
+<p>Beneath the earth, warrens, ruins, underworlds unseen by the sun. Things slink. Nightmares breed and multiply and fester. Beasts lair and stalk forth when the light of day is extinguished.</p>
+<h3 id="timekeeping">Timekeeping</h3>
+<p>Time is measured in 10 minute intervals - Dungeon Turns. Each Dungeon Turn there is a 1/6 chance of an Encounter, using a prepared Enchounter table for the location. Most major activities take 10 inutes - searching for traps, unlocking doors, clearing obstacles etc.<br />
+After combat or an hour’s exploration, most parties require a Dungeon Turn of rest - those pushing beyond this take a penalty of 2 to any d20 rolls made until they rest for two Dungeon Turns.</p>
+<h3 id="light">Light</h3>
+<p>Beneath the Earth there is no light - those who would plumb the depths should carry their own. A torch may burn out on a 1/6 each Dungeon Turn. Those who dwell Beneath the Earth have oftem learnt to see without light through long centuries groping in the darkness.</p>
+<h3 id="movement">Movement</h3>
+<p>Cautious movement allows for a room to be explored each Dungeon Turn. This allows for mapping, trap checking, and close observation of the darkness.<br />
+Those abandoning caution could quadruple this, but are sure to become lost and stumble into any ambushes, trigger any traps etc.</p>
+<h3 id="encounters">Encounters</h3>
+<p>In the case of an Encounter, consider if either party is aware of the other - factors such as light and sound being major determinants. Unaware parties are surprised 2/6 of the time.<br />
+In a group is surprised, encounters begin with parties d6* 10’ away. Otherwise 2d6*10’. Both groups can be surprised.</p>
+<h1 id="spellcraft">Spellcraft</h1>
+<p>Magic is derived from gods both tall and small. Their influence on reality is bottled, jammed, etched into magical artifacts. Braver souls channel magic through themselves, becoming a pactmage. Most use tomes or wands to channel spells. Other use the passive magic of artifacts.</p>
+<h2 id="casting-a-spell">Casting a Spell</h2>
+<p>Casting a spell requires a firm voice and the appropriate tome at hand. When you cast a spell, lose d3 HP as you cast. When casting, consume the resources used to cast, if relevant.<br />
+Books, wands, and other gizmos are used to when casting a spell. Calling upon greater powers is a dangerous endeavor and a spell can only be used once per day.<br />
+L refers to a character’s Level.<br />
+Unless otherwise noted a spell’s durration is L*10 minutes.</p>
+<h3 id="in-combat-1">In Combat</h3>
+<p>Casting a spell in combat requires a Mind Test, DC10 when targeting nothing, or against an enemy’s Warding when targeting an NPC. When you start casting all those that can hear are made aware of the magic and can attempt a counterspell.<br />
+Casting within Arm’s-reach of an enemy imposes disadvantage.<br />
+A Crit Fail when casting or counterspelling results in a spell mishap. Roll below.</p>
+<table>
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 87%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">36</th>
+<th style="text-align: left;">Spellcasting Mishaps</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">11</td>
+<td style="text-align: left;">The spell saps the heat from the surface of all those in the area, ice forms on their skin.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">12</td>
+<td style="text-align: left;">All vegetation within a mile dies.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">13</td>
+<td style="text-align: left;">All animals in the vicinity are brought back to life. This includes provisions and leather, which will crawl and flap around blindly.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">14</td>
+<td style="text-align: left;">Several dozen gallons of <em>1. Water 2. Oil 3. Acid 4. Slime</em> are formed, which quickly falls to the floor.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">15</td>
+<td style="text-align: left;">The spell collapes and everyone in the radius is blinded for L rounds and any exposed skin is sunburned.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">16</td>
+<td style="text-align: left;">Any food carried by the caster or those within Arm’s-reach of the caster immedately spoils</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">21</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">22</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">23</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">24</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">25</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">26</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">31</td>
+<td style="text-align: left;">The caster becomes extremely magnetic, briefly.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">32</td>
+<td style="text-align: left;">All metal on the caster quickly oxidizes inhibiting function. They might need a good polishing or a replacement depending on the metal in question</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">33</td>
+<td style="text-align: left;">A calm healthy pig appears</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">34</td>
+<td style="text-align: left;">The caster coughs up a thick black fluid. The fluid flows away as though in a hurry to be somewhere. The wizard will soon hear rumors and suffer accusations due ot the workings of asinister doppelganger.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">35</td>
+<td style="text-align: left;">The spell being cast won’t stop. It goes completely haywire, out of control, firing off madly until the wizard is subdued.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">36</td>
+<td style="text-align: left;">A small planar tear forms, permittiing appropriately sized things to travel between</td>
+</tr>
+</tbody>
+</table>
+<h3 id="counterspelling">Counterspelling</h3>
+<p>To counterspell one must roll equal to or greater the HP lost by the original caster and succed a Mind Test of their own. If successful, the spell is dispersed.<br />
+Regardless of if the counterspeller succeeds or fails, they lose the HP.<br />
+A counterspell can be counterspelled by a yet uninvolved mage. Meet or beat the counterspell’s HP target.</p>
+<h2 id="gods-and-their-spells">Gods and Their Spells</h2>
+<p>Gods represent aspects of reality, and their relevence in a region dictates their status as tall or small. Such distinctions are social constructs applied to gods by humans. Gods grant many gifts to their followers, but most often they are objects, embued with spirits, clearly of their god. The spirits allow users to then cast magical effects.</p>
+<h2 id="tall-gods">Tall Gods</h2>
+<p>The following are some of most worshiped gods. They are considered tall nearly everywhere, and all have children gods worshiped in their own rights.</p>
+<h3 id="trade">Trade</h3>
+<p>A desendent of Rivers, Trade desires peaceful cooperative relationship between peoples. Places of worship are often trading posts or town squares. Often the god of politicians and merchants.<br />
+To become a pactmage of Commerce you must replace your tounge with silver and pledge to find peaceful solutions. You may never become broke. As a pactmage you may buy things at 2d10% less than list price and reation rolls are made at advantage.</p>
+<ul>
+<li><strong>Convince:</strong> For L minutes target gains advantage when negotiating and trading.<br />
+</li>
+<li><strong>Pacify:</strong> L creatures have an aversion to violence.</li>
+<li>**</li>
+</ul>
+<h3 id="nature">Nature</h3>
+<p>Nature believes the layers of the earth should remain unchurned. The things above should stay, and aspects of below such as metals should remain beneath.<br />
+To become a pactmage of Nature you may never touch metal, taking 2d6 damage upon willful contact. You must also help creatures of the wild when found in danger. As a pactmage you can speak with animals and have advantage when spotting illusions.</p>
+<ul>
+<li><strong>Fog Cloud:</strong> Dense fog spreads out from you.</li>
+<li><strong>Ward:</strong> Choose one thing that cannot cross an entrance: Living creatures, dead creatures, projectiles, or metal.</li>
+<li><strong>Heat Metal:</strong> Target metal or metal wearer takes d2 damage for each slot of metal items on them.</li>
+</ul>
+<h3 id="fire">Fire</h3>
+<p>Fire is the agent of chaos; chance. Worshipers are preachers of change and innovation. They are inventors and madmen alike. Shallow impulses and sudden concequences define their cast.<br />
+To become a pactmage of Fire you must regect the old. You must always speak the truth no matter the cost and refuse the lies you are told. As a pactmage you only take half damage from fire and have an innate knack for starting or snuffing fires.</p>
+<ul>
+<li><strong>Combust:</strong> Target flamable object bursts into flame.</li>
+<li><strong>Soulfire:</strong> Target artifact can only be used at disadvantage.</li>
+<li><strong>Immolate:</strong> A jet of flame bursts out dealing 2d6 damage to those in its path.</li>
+</ul>
+<h3 id="earth">Earth</h3>
+<p>Earth is the provider and dictator of life. It’s presence decides where humans can and cannot live. Farmers, explorers, and miners all hold respect for Earth. Earth brings bounty to those who support their efforts.<br />
+To become a pactmage of Earth you must bury your heart in the earth. Your soul cannot be given or parted. As a pactmage you add your Favor to scrounging rolls. You always know the fastest way out of a cave. When you may become lost there’s a 2/6 chace you do not.</p>
+<ul>
+<li><strong>Summon Cubes:</strong> L times per round, summon or destroy 3 foot cubes of earth. New cubes must be affixed to the earth or to the other cubes.</li>
+<li><strong>Sculpt Elements:</strong> All inanimante material behaves like clay in your hands.</li>
+<li><strong>Objectify:</strong> You become any inanimate object between the size of a grand piano and an apple.</li>
+</ul>
+<h2 id="becoming-an-pactmage">Becoming an Pactmage</h2>
+<p>Becoming an pactmage should be a carefully measured choice. As an pactmage you are dedicated to furthering the goals of a diety. You can innately cast certain spells and gain access to resources and contacts.<br />
+To become an pactmage, a character must complete a Boast in the interest of the god and dedicate the accomplishment to said god.</p>
+<h3 id="favor">Favor</h3>
+<p>An pactmage has to be conscious of staying in Favor of their god. Similar to an attribute, Favor is a value from -5 to +5. When casting spells of the pactmage’s god, add Favor to the roll instead of Mind.<br />
+Several things change Favor.<br />
++ After each long rest set Favor closer to 0 by 1. + Magic of another god used by the pactmage reduces Favor by 1. + Actions taken against the interest of the god reduces Favor by 1. + Sacrifices worth at least 1g increase Favor by 1. + Natural Crits increase Favor by 1. + Natural Failures decrease Favor by 1. + Boasts completed in the interested of the god increase Favor by 3.</p>
+<h1 id="monsters">Monsters</h1>
+<p>NPCs and Monsters in Greenhack are broken down with common stats for easy understanding and simple conversion from other systems. Being monsters however they have plenty of exceptions to the rules.</p>
+<h3 id="hit-dice-hd">Hit Dice (HD)</h3>
+<p>The Hit Dice a NPC reflects the challenge it represents, roughly equivelant to a player level. It is used to calculate other stats and can be added as a bonus to rolls the monster makes when attempting things.</p>
+<h3 id="hit-protection-hp">Hit Protection (HP)</h3>
+<p>NPC HP is similar to that of the player, but unlike a player character the NPC dies when HP is reduced to 0 unless explicitly non-lethally.<br />
+HP is usually calculated by taking the average or rolling a number of d6s equal to the HD of the creature.</p>
+<h3 id="armor-class-ac">Armor Class (AC)</h3>
+<p>Armor class has a purpose similar to a character’s Dodge Save. It is a target value that players try and exeed when they attack. It functions differently in that it is general enough to reflect the numberous ways a monster may resist attack. It also covers the context of armor, reducing the number of rolls in combat to keep focus on player actions.<br />
+An average NPC’s AC is usually equal to 10+HD but can vary depending on the nature of the monster.</p>
+<h3 id="conviction-co">Conviction (CO)</h3>
+<p>The monster’s conviction represents how much it wants to keep what its doing. This stat is reduced as allies fall and health dwindle. On its turn the conviction of a creature may be tested if its considering fleeing by rolling 2d6. If it rolls over its conviction, the monster flees. Players can also force a creature to test conviction or lower it through negotioation and chat.</p>
+<h3 id="presence-warding-pr-wa">Presence &amp; Warding (PR &amp; WA)</h3>
+<p>Presence represnts the intellegence of the creature while warding represents their magical control. These numbers function similar to AC but are tested against when player characters attempt to outsmart or magically alter NPCs.<br />
+Presence and Warding are both highly variable depending on the creature’s nature, but the same rule of 10+HD can sometimes be followed.</p>
+<h3 id="damage-1">Damage</h3>
+<p>Damage details how much damage the NPC can do and how it accompishes it. Often it will be listed as d6 claws, d8 tail. This allows the GM to describe the attack and provides players with options on limiting damage.<br />
+Average damage at a certain HD is usually a number of d6s equal to HD.</p>
+<h2 id="sample-monsters">Sample Monsters</h2>
+<ul>
+<li><strong>Dredge Zombie:</strong> A stinking husk of a thing. Mindless and floppy. HD1, HP6, AC8, CO10, PR6, WA10. d6 bite. Will not flee.<br />
+</li>
+<li><strong>Goblin Shaman:</strong> Wrinked and fat. Giggling until hurt; then hateful. HD2, HP8, AC12, CO10, PR13, WA12. d4 dagger. Random Spellbook.<br />
+</li>
+<li><strong>Shanka:</strong> A contortment of flesh and metal. Flatheads. HD2, HP7, AC12, CO12, PR10, WA8. d6 crude tools, d4 bite.</li>
+</ul>
+<h1 id="equipment">Equipment</h1>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Goods</th>
+<th style="text-align: left;">SP</th>
+<th style="text-align: left;">Details</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Bandages</td>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">ADV when recovering someone</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Beartrap</td>
+<td style="text-align: left;">20</td>
+<td style="text-align: left;">DOD SAV or 2d6 damage</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Blanket</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Book</td>
+<td style="text-align: left;">50</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Bottle</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Box, large iron†</td>
+<td style="text-align: left;">30</td>
+<td style="text-align: left;">12 slot capacity</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Box, small iron</td>
+<td style="text-align: left;">15</td>
+<td style="text-align: left;">6slot capacity, 7 slots</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Caltrops</td>
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">DOD SAV or d4 damage</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Candle, tallow</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Candle, wax</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Cart†</td>
+<td style="text-align: left;">50</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Case, map</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Chalk</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Checkers</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Chest, large wooden†</td>
+<td style="text-align: left;">15</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Chest, small wooden†</td>
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">6 slot capacity, 7 slots</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Chewing tobacco</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Compass</td>
+<td style="text-align: left;">100</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Crowbar</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Dice</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Flint &amp; steel</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Grappling hook</td>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">With rope attached</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Hammer &amp; wooden stakes</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Heavy chain</td>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">15’ 2 slots</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">iron nails</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Laboratory, portable</td>
+<td style="text-align: left;">150</td>
+<td style="text-align: left;">allows for the brewing of potions, 3 slots</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Ladder</td>
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">2 slots</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Lantern oil‡</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Lantern</td>
+<td style="text-align: left;">7</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Lard</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Large iron hook</td>
+<td style="text-align: left;">9</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">lockpicks</td>
+<td style="text-align: left;">8</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Magnesium strip</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Manacles</td>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Map, local</td>
+<td style="text-align: left;">20</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Metal file</td>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Mirror, Large Metal</td>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">6 slots</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mirror, Small Metal</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Net</td>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">2 slots</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Poison, black</td>
+<td style="text-align: left;">20</td>
+<td style="text-align: left;">DOD SAV or 2d6 &amp; Blind for a hour</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Pole</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">10’</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Ration, officer‡</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Ration, enlisted‡</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Rope, hemp</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">50’, 2 slots</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Rope, silken</td>
+<td style="text-align: left;">70</td>
+<td style="text-align: left;">50’, 2 slots</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Salt</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Scissors</td>
+<td style="text-align: left;">9</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Sharp needle</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Shovel</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Skiing equipment</td>
+<td style="text-align: left;">15</td>
+<td style="text-align: left;">2 slots</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Snare</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Sleeping bag</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Tent‡</td>
+<td style="text-align: left;">12</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Tinderbox</td>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Toolbox</td>
+<td style="text-align: left;">20</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Torch‡</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Water or wineskin‡</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Shield</td>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Light armor</td>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">2 slots</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Medium armor</td>
+<td style="text-align: left;">40</td>
+<td style="text-align: left;">3 slots</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Heavy armor</td>
+<td style="text-align: left;">80</td>
+<td style="text-align: left;">5 slots</td>
+</tr>
+</tbody>
+</table>
+<p>† <em>Indicates an Unwieldly item</em><br />
+‡ <em>Indicates an Expedition Resource</em></p>
+<table>
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 9%" />
+<col style="width: 13%" />
+<col style="width: 63%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Weapons</th>
+<th style="text-align: left;">SP</th>
+<th style="text-align: left;">Damage</th>
+<th style="text-align: left;">Special</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Arming Sword</td>
+<td style="text-align: left;">30</td>
+<td style="text-align: left;">d8</td>
+<td style="text-align: left;">Riposte twice</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Battle-Axe†</td>
+<td style="text-align: left;">20</td>
+<td style="text-align: left;">d8</td>
+<td style="text-align: left;">May sacrifice 3 damage from an attack to attempt a weapon/shield strip. Roll a second attack - if succesful, a weapon or shield can be ripped form the grip of the opponet.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Blunderbuss‡</td>
+<td style="text-align: left;">220</td>
+<td style="text-align: left;">4d6/2d6</td>
+<td style="text-align: left;">4d6 damage when attacking at arm’s-reach. 2d6 at range. Loading.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Club</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">d4</td>
+<td style="text-align: left;">Forgo damage to attempt to stun. After a successful attack, target attempts a PHY Save. Failure results in them losing their next combat round.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Crossbow†‡</td>
+<td style="text-align: left;">35</td>
+<td style="text-align: left;">d12</td>
+<td style="text-align: left;">Ignores light and medium armor. Loading.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Dagger</td>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">d4</td>
+<td style="text-align: left;">Throwable. Concealable. Usable while grappling.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Espadon†</td>
+<td style="text-align: left;">150</td>
+<td style="text-align: left;">3d6</td>
+<td style="text-align: left;">Upon a killing blow, the wielder can roll another attack. This effect can be triggered multiple times. Cannot be used indoors.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Flail</td>
+<td style="text-align: left;">15</td>
+<td style="text-align: left;">d6</td>
+<td style="text-align: left;">Ignores shields.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Greatsword†</td>
+<td style="text-align: left;">60</td>
+<td style="text-align: left;">d10</td>
+<td style="text-align: left;">Riposte once.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Hand-Axe</td>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">d6</td>
+<td style="text-align: left;">Throwable. If damage is 5+ in melee the axe bounces allowing another attack for 1 HP.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Javelin</td>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">d6</td>
+<td style="text-align: left;">Throwable.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mace</td>
+<td style="text-align: left;">15</td>
+<td style="text-align: left;">d6</td>
+<td style="text-align: left;">Treats armor as one step lower than it is.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Arquibus†‡</td>
+<td style="text-align: left;">210</td>
+<td style="text-align: left;">d12</td>
+<td style="text-align: left;">Ignores all armor. Loading.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Pistolet‡</td>
+<td style="text-align: left;">120</td>
+<td style="text-align: left;">d6</td>
+<td style="text-align: left;">No penalty for attacking at Arm’s-reach. Loading.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Polearm†</td>
+<td style="text-align: left;">25</td>
+<td style="text-align: left;">d8</td>
+<td style="text-align: left;">Allies within Arm’s-reach get +1 on DOD Saves.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Poleaxe†</td>
+<td style="text-align: left;">30</td>
+<td style="text-align: left;">d10</td>
+<td style="text-align: left;">Free attack when enemies not wielding a two-handed melee weapon enter Arm’s-reach.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Quarterstaff†</td>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">d6</td>
+<td style="text-align: left;">Advantage when attackin in a one-on-one.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Shortbow†‡</td>
+<td style="text-align: left;">15</td>
+<td style="text-align: left;">d6</td>
+<td style="text-align: left;">Can make a third attack if all actions are used and the user takes d3 damage.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Sling‡</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">d4</td>
+<td style="text-align: left;">Can be used ot launch grenades.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Spear†</td>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">d6/d8</td>
+<td style="text-align: left;">Free attack at d8 damage when enemies not weilding a two-handed meleee range. d6 normally.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Great-Axe†</td>
+<td style="text-align: left;">60</td>
+<td style="text-align: left;">2d6</td>
+<td style="text-align: left;">If a 6 is rolled for damage, roll another d6and add the result. This effect can be triggered multiple times. Users Dodging Save +2 if not wearing Medium or Heavy Armor.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Warhammer†</td>
+<td style="text-align: left;">35</td>
+<td style="text-align: left;">d10</td>
+<td style="text-align: left;">Those struck are thrown back if unable to make a PHY Save. Use the damage-HD to determine distance.</td>
+</tr>
+</tbody>
+</table>
+<p>† <em>Indicate a two-handed weapon, taking up 2 slots.</em><br />
+‡ <em>Indicates a ranged weapon.</em><br />
+Loading weapons require a AGI action to be reloaded.<br />
+Riposte: Melee attacks that are sucessfuly dodged allow the defender to make a counter attack at disadvantage.</p>
+</body>
+</html>
