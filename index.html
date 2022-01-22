@@ -10,27 +10,20 @@
   <style>
     
   .sidenav {
-    height: 100%;
-    width: 300px;
+    height: 90%;
+    width: 250px;
     position: fixed;
     z-index: 1;
     top: 2;
     left: 0;
     background-color: #fdfdfd;
     overflow-x: hidden;
+    overflow-y:auto
     padding-top: 0px;
   }
 
   .sidenav a {
-    padding: 6px 8px 6px 20px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #1a1a1a;
-    display: block;
-  }
-
-  .sidenav ak {
-    padding: 6px 8px 6px 40px;
+    padding: 6px 8px 6px 16px;
     text-decoration: none;
     font-size: 25px;
     color: #1a1a1a;
@@ -41,9 +34,7 @@
     color: #22b374;
   }
 
-  .sidenav aa:hover {
-    color: #22b374;
-  }
+
 
 
 
@@ -198,7 +189,7 @@
 </head>
 <body>
 <div class="sidenav">
-  <strong><a href="#the-character">Characters</a></strong>
+  <strong><a href="#characters">Characters</a></strong>
   <a href="#progression">Progression</a>
   <strong><a href="#mechanics">Mechanics</a></strong>
   <a href="#combat">Combat</a>
@@ -212,6 +203,7 @@
   <a href="#casting-a-spell">Casting a Spell</a>
   <a href="#gods-and-their-spells">Gods and Their Spells</a>
   <a href="#tall-gods">Tall Gods</a>
+  <a href="#additional-spells">Additional Spells</a>
   <a href="#becoming-an-pactmage">Becoming a Pactmage</a>
   <strong><a href="#monsters">Monsters</a></strong>
   <a href="#sample-monsters">Sample Monsters</a>
@@ -222,11 +214,21 @@
 
 <header id="title-block-header">
 <h1 class="title">Greenhack</h1>
-<p class="subtitle">1.16</p>
-<p class="author">Rolland C</p>
+<p class="subtitle">1.21</p>
+<p class="author">Rolland</p>
 </header>
-<h1 id="the-character">Characters</h1>
-<p>Characters in Greenhack are human. In debt and often on the run they search for ways to finance their existance.</p>
+<h1 id="changelog">Changelog</h1>
+<ul>
+<li>Changed counterspell system.</li>
+<li>Added coin rules to inventory.</li>
+<li>Added more spells than ever before.</li>
+<li>Modified boasts to allow feat progression.</li>
+<li>nerfed spell level powering because speeder ‘level progression’</li>
+<li>changed bow and sling to increase flexability.</li>
+<li>ensured rules for melee and ranged weapons were differentiated.</li>
+</ul>
+<h1 id="characters">Characters</h1>
+<p>Characters in Greenhack are human. In debt and often on the run they search for ways to finance their continued existance.</p>
 <h3 id="attributes">Attributes</h3>
 <p>Attributes are used when characters take an action.<br />
 There are four attributes: Strength, Agility, Mind &amp; Soul.<br />
@@ -245,7 +247,7 @@ Warding starts at 17. If Souls is 3+, Warding is reduced to 16. The inverse is t
 Maximum HP cannot exceed 18.<br />
 Starting HP is equal ot 3d4.</p>
 <h3 id="skills">Skills</h3>
-<p>List three non-combative skills the character has. These may come uo during play to provide advantage in relevent cases.</p>
+<p>List three non-combative skills the character has. These may come up during play to provide advantage in relevent cases.</p>
 <table>
 <thead>
 <tr class="header">
@@ -266,7 +268,7 @@ Starting HP is equal ot 3d4.</p>
 <td style="text-align: left;">Horsemanship</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Preformance</td>
+<td style="text-align: left;">Performance</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Scrounging</td>
@@ -280,15 +282,15 @@ Starting HP is equal ot 3d4.</p>
 <p>Start knowing d3 languages to be proficient at. If you select the same language twice you can speak <em>and</em> write in it.<br />
 A language can be half know, this being enough ot conduct trade.<br />
 All characters must share at least one half known language.<br />
-Language slots can be held in reserve, although a character must declare they knoa a language the first time it is encountered. Some languages cannot be know this way.</p>
+Language slots can be held in reserve, although a character must declare they know a language the first time it is encountered. Some languages cannot be know this way.</p>
 <h3 id="money">Money</h3>
 <p>Roll 10d6 silver exploding (for each 6 rolled, roll that die again and add to the total rolled. Keep doing that until you roll no more 6s) With the money purchase items from the back of the zine.</p>
 <h2 id="progression">Progression</h2>
-<p>Character progression in Greenahck is minimal when compared to the likes of 5e. Characters after all are only human.</p>
+<p>Character progression in Greenhack is minimal when compared to the likes of 5e. Characters after all are only human.</p>
 <h3 id="boasts">Boasts</h3>
-<p>A Character who makes a Boast of Heroic Proportions either gains d6 maximum HP or +1 to any Attribute in addition to any wager or reward offered by others.<br />
-If they are found to shirk their Boast, they lose the HD or Attack Bonus and may never again Boast.<br />
-Those failing the Boast lose the HD or Attack Bonus, but may try again or make another Boast.<br />
+<p>A Character who makes a Boast of Heroic Proportions either gains d6 maximum HP, +1 to any Attribute, or a feat. This is in addition to any wager or reward offered by others.<br />
+If they are found to shirk their Boast, they lose the bonus and may never again Boast.<br />
+Those failing the Boast lose their bonus, but may try again or make another Boast.<br />
 Only one Boast per character can be pending at a time.</p>
 <h3 id="feats">Feats</h3>
 <p>Mutations, feats, call them what you will. As characters adventure they take on feats. Feats help define a character’s specialty and give them little exceptions to the rules.</p>
@@ -323,13 +325,13 @@ Only one Boast per character can be pending at a time.</p>
 <li><strong>Poison Sense:</strong></li>
 <li><strong>Quartermaster:</strong> Roll usage dice with advantage.</li>
 <li><strong>Resilience:</strong> When you succeed a Death’s Door Test, roll d6 for regained HP.</li>
-<li><strong>Salveskin:</strong> Reduce fire damage by 1d2 before armor.</li>
+<li><strong>Salveskin:</strong> Reduce fire damage by d2 before armor.</li>
 <li><strong>Serpent:</strong> Advantage when trying to convince someone to do something against their best interest.</li>
 <li><strong>Silent Killer:</strong> Advantage when attacking an unaware victim with a melee weapon.</li>
 <li><strong>Steady Aim:</strong> Spend an action to gain advantage when shooting a weapon.</li>
 <li><strong>Steeled:</strong> A character suffers no penalty when casting a spell within Arm’s-reach of the enemies.</li>
 <li><strong>Tomahawk:</strong> Throw melee weapons for original weapon’s damage value.</li>
-<li><strong>Vigilant:</strong> You can never be the civtim of a surprise attack. Additionally, your side takes initiative on a 3+.</li>
+<li><strong>Vigilant:</strong> You can never be the victim of a surprise attack. Additionally, your side takes initiative on a 3+.</li>
 <li><strong>Vigor:</strong></li>
 <li><strong>Vulture:</strong> Roll twice when looting bodies.</li>
 <li><strong>Whispersmith:</strong></li>
@@ -352,7 +354,7 @@ To make a Save, roll a d20; attempting to equal or best the Save’s value.</p>
 <table>
 <thead>
 <tr class="header">
-<th style="text-align: left;">Saves’s Uses</th>
+<th style="text-align: left;">Save’s Uses</th>
 <th style="text-align: left;"></th>
 </tr>
 </thead>
@@ -392,20 +394,20 @@ To make a Save, roll a d20; attempting to equal or best the Save’s value.</p>
 </tbody>
 </table>
 <h3 id="critical-success">Critical Success</h3>
-<p>Critical Success (Crit) occures when you roll a natural 20. When you roll a Crit out of combat, the event goes better than anticipated.<br />
+<p>Critical Success (Crit) occurs when you roll a natural 20. When you roll a Crit out of combat, the event goes better than anticipated.<br />
 When attacking in combat, roll twice the dice for damage. While defending, a critical allows you to attack back without using a Riposte (see weapons table).</p>
 <h3 id="critical-failure">Critical Failure</h3>
-<p>Critical Fail (Crit Fail) occurs when you roll a natural 1. Out of combat the Test or Save fails with added consequence. In combat, a critical failure when attacking leaves you Exposed until the start of youtr next turn. When defending it means you take double damage.</p>
+<p>Critical Fail (Crit Fail) occurs when you roll a natural 1. Out of combat the Test or Save fails with added consequence. In combat, a critical failure when attacking leaves you Exposed until the start of your next turn. When defending it means you take double damage.</p>
 <h2 id="combat">Combat</h2>
 <h3 id="initiative">Initiative</h3>
 <p>In combat characters have fewer choices about what actions they can take. Combat is organized into Rounds of roughly 6 seconds where all parties have a Turn.<br />
-At the start of each Round and at the start of combat, a player rolls a d6. On a 4+ the roller’s Turn begins first. Otherwise an enemy’s goes first. The subsiquent Turn is chosen by the person currently taking a Turn.<br />
-A surpised party does not roll for the first round. They lose out on the initiative.</p>
+At the start of each Round and at the start of combat, a player rolls a d6. On a 4+ the roller’s Turn begins first. Otherwise an enemy’s goes first. The subsequent Turn is chosen by the person currently taking a Turn.<br />
+A surprised party does not roll for the first round. They lose out on the initiative.</p>
 <h3 id="movement-ranges">Movement &amp; Ranges</h3>
-<p>Movement in greenhack is abstracted, Fights happen near enough to assume things are in range of projectile weapons. Perhaps something might call for a long shot, but targets are always with in firing range.<br />
-Importantly you need to know if you’re in arm’s-reach of someone, which permits the useage of melee weapons while impairing casting and shooting (Disadvantage).</p>
+<p>Movement in Greenhack is abstracted, Fights happen near enough to assume things are in range of projectile weapons. Perhaps something might call for a long shot, but targets are always with in firing range.<br />
+Importantly you need to know if you’re in arm’s-reach of someone, which permits the usage of melee weapons while impairing casting and shooting (Disadvantage).</p>
 <h3 id="actions">Actions</h3>
-<p>In Greenhack, characters get an Action for each Attribute. When it’s their turn, they can use any number of Actions as they see fit. You can sacrifice two actions to take a second action of te same stat. Anounce the sacrifced Attributes before rolling for the second Action.</p>
+<p>In Greenhack, characters get an Action for each Attribute. When it’s their turn, they can use any number of Actions as they see fit. You can sacrifice two actions to take a second action of the same stat. Announce the sacrificed Attributes before rolling for the second Action.</p>
 <table>
 <colgroup>
 <col style="width: 18%" />
@@ -428,11 +430,11 @@ Importantly you need to know if you’re in arm’s-reach of someone, which perm
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Agility</td>
-<td style="text-align: left;">Move around: move 25 feet, requres a Test if moving out of Arm’s-reach of a combatant. Halved in difficult terrain.</td>
+<td style="text-align: left;">Move around: move 25 feet, requires a Test if moving out of Arm’s-reach of a combatant. Halved in difficult terrain.</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Agility</td>
-<td style="text-align: left;">Search pack: roll 2d6 and rearrange the pack to that depth. Can add subsiquent rolls to the inital to reach further</td>
+<td style="text-align: left;">Search pack: roll 2d6 and rearrange the pack to that depth. Can add subsequent rolls to the initial to reach further</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Agility</td>
@@ -444,7 +446,7 @@ Importantly you need to know if you’re in arm’s-reach of someone, which perm
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Mind</td>
-<td style="text-align: left;">Examine: With a sucessful DC12 Test learn something of interest about a target or object</td>
+<td style="text-align: left;">Examine: With a successful DC12 Test learn something of interest about a target or object</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Mind</td>
@@ -461,30 +463,36 @@ Importantly you need to know if you’re in arm’s-reach of someone, which perm
 </tbody>
 </table>
 <h3 id="attacking-defending">Attacking &amp; Defending</h3>
-<p>Attacks are made by making the appropriate Test, rolling over the target’s AC. This is generally Strength for melee and mind for ranged. Modifers both negative and positive may be issued to the Test, depending on curcumstance. If sucessful, roll for damage.<br />
+<p>Attacks are made by making the appropriate Test, rolling over the target’s AC. This is generally Strength for melee and mind for ranged. Modifiers both negative and positive may be issued to the Test, depending on circumstance. If successful, roll for damage.<br />
 If you miss with a ranged attack there is a 50% chance of hitting someone else within Arm’s-reach of the target.<br />
 When defending, roll a Dodging Save. This number is modified by armor and the usual things. If you fail, the GM will tell you how much damage you take; reduced by character’s armor.<br />
 Those caught unaware when attacked such as when ambushed can be killed when struck.</p>
 <h3 id="maneuvers">Maneuvers</h3>
-<p>When an attack is success and before damage is rolled, the attacker can present a choice to the defender. Either they take the damage, or the attacker preforms a maneuver. This could be anything from knowcking them down, blinding with sand, pinning them etc.<br />
+<p>When an attack is success and before damage is rolled, the attacker can present a choice to the defender. Either they take the damage, or the attacker preforms a maneuver. This could be anything from knocking them down, blinding with sand, pinning them etc.<br />
 Players can force a maneuver by attacking with disadvantage and GM approval. This must be declared before the attack is rolled.</p>
 <h3 id="damage">Damage</h3>
 <p>When you take Damage reduce you HP the corresponding amount. If an attack would reduce yourt HP below 1, you’re on Death’s Door.<br />
 If damage is halved, round up</p>
 <h3 id="armor">Armor</h3>
 <p>Armor is used to reduce damage. Armor comes in three flavors; Light, Medium, and Heavy. As armor gets heavier, it blocks more damage, but make it harder to dodge attacks.<br />
-Armor cannot reduce damage reduce damage below 1.<br />
-+ Shield: Damage -1, +1 to Dodge Saves + Light: Damage -d2, +1 to Dodge Saves + Medium: Damage -d4, +3 to Dodge Saves + Heavy: Damage -d8, +5 to Dodge Saves</p>
+Armor cannot reduce damage reduce damage below 1.</p>
+<ul>
+<li>Shield: Damage -1, +1 to Dodge Saves</li>
+<li>Light: Damage -d2, +1 to Dodge Saves</li>
+<li>Medium: Damage -d4, +3 to Dodge Saves</li>
+<li>Heavy: Damage -d8, +5 to Dodge Saves</li>
+</ul>
 <h3 id="deaths-door">Death’s Door</h3>
 <p>Roll a Soul Test DC(10+excess damage). If you succeed, your HP is a 1 and you’re still fighting. If you fail, you’re out of the fight. Reduce your Strength by the excess damage. If damage would reduce Strength below -5 your character is dead.</p>
 <h3 id="recovery">Recovery</h3>
 <p>With a swig of water and a snack, you can recover d6 HP in 10 minutes.<br />
 With a full night of restful sleep, recover all lost Strength and HP.</p>
 <h1 id="inventory">Inventory</h1>
-<p>In Greenhack inventory represents what characters are carrying. Each character has 14 slots, in order of accessibility. The first two are the character hands, often occupied with weapons. The buulkier the item, the more slots it requires.<br />
-Unwieldly items cannot be carried within an inventory.</p>
+<p>In Greenhack inventory represents what characters are carrying. Each character has 14 slots, in order of accessibility. The first two are the character hands, often occupied with weapons. The bulkier the item, the more slots it requires.<br />
+Coins are 240 to a slot. 1 gold for 12 silver and 20 copper to a silver.<br />
+Unwieldy items cannot be carried within an inventory.</p>
 <h3 id="in-combat">In Combat</h3>
-<p>A character can only use what they have in hand. This often means spending Agility actions to rummange for the item or potion in need. It is a free action to drop held items, but requires the Agility action to pick up or stoe items.</p>
+<p>A character can only use what they have in hand. This often means spending Agility actions to rummage for the item or potion in need. It is a free action to drop held items, but requires the Agility action to pick up or store items.</p>
 <h3 id="usage-dice">Usage Dice</h3>
 <p>Many items are consumable. When used or tested to see if they are consumed, roll a d6. If the result is a 1 the item has been consumed.</p>
 <h3 id="ammo">Ammo</h3>
@@ -548,9 +556,9 @@ Hirelings have stats like characters, can carry the same stuff as characters, an
 </tbody>
 </table>
 <h3 id="adventuring-with-hirelings">Adventuring with Hirelings</h3>
-<p>Hirelings are controlled by the GM. When it comes ot combat or whathaveyou a player rolls 2d6 to determine their competence in the heat of action. a lower roll results in a more foolish action, while the latter a more effective action based on what the hireling is aware of.</p>
+<p>Hirelings are controlled by the GM. When it comes to combat or whathaveyou a player rolls 2d6 to determine their competence in the heat of action. a lower roll results in a more foolish action, while the latter a more effective action based on what the hireling is aware of.</p>
 <h1 id="travel">Travel</h1>
-<p>Hexes are assumed ot be 6 miles across.</p>
+<p>Hexes are assumed to be 6 miles across.</p>
 <h2 id="abreast-the-sea">Abreast the Sea</h2>
 <p>Between the lands march whale-roads. The ships of the north are able to travel the deeper seas where no land may be seen, before snaking into rivers to find plunder inland. Others are bound to the coast, existence liminal.<br />
 Vessels have a default movement which is modified by wind-speed. Ships able to drop sails can elect to ignore such modifications and use only muscle-power.</p>
@@ -690,7 +698,7 @@ Determine initial direction randomly. Then, each day, roll a d6.</p>
 </tr>
 </tbody>
 </table>
-<p>If the Wind is behind the Vessel, increase the number of hexes travelled a day by the first value listed in the Wind Strength chart. If it is ’adjacent’ - 1 direction distant - add the second value. Otherwise, ignore the wind. (e.g. NE and NW both speed a vessel travelling North.)</p>
+<p>If the Wind is behind the Vessel, increase the number of hexes traveled a day by the first value listed in the Wind Strength chart. If it is ’adjacent’ - 1 direction distant - add the second value. Otherwise, ignore the wind. (e.g. NE and NW both speed a vessel traveling North.)</p>
 <h3 id="storms">Storms</h3>
 <p>Vessels in a storm have a 30% chance of capsizing per day. Capsized vessels lose any loose cargo, and have a 40% chance of sinking before being righted by the crew.<br />
 All encounters with other ships are ignored.</p>
@@ -728,7 +736,7 @@ The tables below can be used where no regional encounter table has been prepared
 <td style="text-align: left;">3</td>
 <td style="text-align: left;">Fishermen</td>
 <td style="text-align: left;">Wreck</td>
-<td style="text-align: left;">Wantering Isle</td>
+<td style="text-align: left;">Wandering Isle</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">4</td>
@@ -791,16 +799,16 @@ Raiders use Karvi, Snekkja and Skeid.</p>
 <h3 id="naval-combat">Naval Combat</h3>
 <p>Naval combat is conducted in 1 minute turns.<br />
 Artillery and sea-monsters may attack ships directly. Characters must instead rely upon fire or boarding.<br />
-Melee attacks against vessels automaticallly hit. Ranged weapons hit on a DC10 test. Advantage if shooting from land. Hand weapons deal no damage - artillery and the strength of the monsters is sufficient to deal damage. If a 6+ is rolled for damage the boat may begin sinking.<br />
-Fire deals d6damage. If a 1 is rolled, the fire reduces in size - roll one dice less next round. If a 6 is rolled the fire has increased in size - now roll 2d6 for damage.</p>
+Melee attacks against vessels automatically hit. Ranged weapons hit on a DC10 test. Advantage if shooting from land. Hand weapons deal no damage - artillery and the strength of the monsters is sufficient to deal damage. If a 6+ is rolled for damage the boat may begin sinking.<br />
+Fire deals d6 damage. If a 1 is rolled, the fire reduces in size - roll one dice less next round. If a 6 is rolled the fire has increased in size - now roll 2d6 for damage.</p>
 <h3 id="rounds-and-turn-order">Rounds and Turn Order</h3>
 <p>Rounds represent roughly a 1 minute frame of time, in which all participants get a turn. Like regular combat, each side rolls a d6 at the start of each round and the side that rolls higher goes first.</p>
 <h3 id="ramming">Ramming</h3>
-<p>Ships in this era are not designed for ramming. A ship performing a ram takes d6 damage. It deals each remaing HD to the target. If a 6 is rolled on a damage dice, that shup may begin sinking.</p>
+<p>Ships in this era are not designed for ramming. A ship performing a ram takes d6 damage. It deals each remaining HD to the target. If a 6 is rolled on a damage dice, that ship may begin sinking.</p>
 <h3 id="boarding">Boarding</h3>
 <p>Characters may leap from one vessel to the next as part of boarding; This requires a DC12 Agility Test. Combat is then had on the vessel. Note this means 10 ‘normal’ Rounds of combat happen per each naval Round.</p>
 <h3 id="sinking">Sinking</h3>
-<p>When a vessel may begin sinking, roll a d6. On a 1-3 it begins sinking. On a 4-6 it is fine. This process takes 3d6 Rounds. If half the crew works to save the vessel, it might (70% chance) avoid the fate. This takes 1d6 Rounds, and cannot be done if under attack.<br />
+<p>When a vessel may begin sinking, roll a d6. On a 1-3 it begins sinking. On a 4-6 it is fine. This process takes 3d6 Rounds. If half the crew works to save the vessel, it might (70% chance) avoid the fate. This takes d6 Rounds, and cannot be done if under attack.<br />
 Any further Sinking result halves the time left before the vessel sinks.</p>
 <h3 id="drowning">Drowning</h3>
 <p>Characters must roll a Physique Save to avoid drowning.</p>
@@ -824,7 +832,7 @@ Any further Sinking result halves the time left before the vessel sinks.</p>
 <td style="text-align: left;">3</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Horeseback</td>
+<td style="text-align: left;">Horseback</td>
 <td style="text-align: left;">4</td>
 </tr>
 <tr class="even">
@@ -833,23 +841,23 @@ Any further Sinking result halves the time left before the vessel sinks.</p>
 </tr>
 </tbody>
 </table>
-<p>†<em>Horses Ridden to Death have a 2/6 change of dying each day, and are useless by the end of the journy.</em> Inclement terrain (thick woods, bogs, and mountains) lacking a road halves movement - round fractions down.</p>
+<p>†<em>Horses Ridden to Death have a 2/6 change of dying each day, and are useless by the end of the journey.</em> Inclement terrain (thick woods, bogs, and mountains) lacking a road halves movement - round fractions down.</p>
 <h3 id="becoming-lost-1">Becoming Lost</h3>
 <p>From a good vantage point, characters may see into adjacent hexes. Mountains are visible from 4 hexes away.<br />
-Weather conditions may hamper visiblilty.<br />
-When no landmark (e.g. mountains, hill, road, town) can be seen, character have a 2/6 chance of becoming Lost. Deserts and Swamps increase this to a 3/6 chance. Hid any map and countinue play without reference to it, until they are able to re-establish their location.<br />
+Weather conditions may hamper visibility.<br />
+When no landmark (e.g. mountains, hill, road, town) can be seen, character have a 2/6 chance of becoming Lost. Deserts and Swamps increase this to a 3/6 chance. Hid any map and continue play without reference to it, until they are able to re-establish their location.<br />
 Movement is in a random direction.</p>
 <h3 id="encounter">Encounter</h3>
 <p>Every 12 hours, an Encounter roll should be made on a chart prepared for the area.<br />
-In the case of an Encounter, consider if either party isaware of the other - factor such as light and sound being major determinants. Unaware parties are surprised 2/6 of the time.<br />
+In the case of an Encounter, consider if either party is aware of the other - factor such as light and sound being major determinants. Unaware parties are surprised 2/6 of the time.<br />
 If a group is surprised, encounters begin with parties d6<em>10’ away. Otherwise, 2d6</em>10’. Both groups can be surprised.</p>
 <h2 id="beneath-the-earth">Beneath the Earth</h2>
 <p>Beneath the earth, warrens, ruins, underworlds unseen by the sun. Things slink. Nightmares breed and multiply and fester. Beasts lair and stalk forth when the light of day is extinguished.</p>
 <h3 id="timekeeping">Timekeeping</h3>
-<p>Time is measured in 10 minute intervals - Dungeon Turns. Each Dungeon Turn there is a 1/6 chance of an Encounter, using a prepared Enchounter table for the location. Most major activities take 10 inutes - searching for traps, unlocking doors, clearing obstacles etc.<br />
+<p>Time is measured in 10 minute intervals - Dungeon Turns. Each Dungeon Turn there is a 1/6 chance of an Encounter, using a prepared Encounter table for the location. Most major activities take 10 minutes - searching for traps, unlocking doors, clearing obstacles etc.<br />
 After combat or an hour’s exploration, most parties require a Dungeon Turn of rest - those pushing beyond this take a penalty of 2 to any d20 rolls made until they rest for two Dungeon Turns.</p>
 <h3 id="light">Light</h3>
-<p>Beneath the Earth there is no light - those who would plumb the depths should carry their own. A torch may burn out on a 1/6 each Dungeon Turn. Those who dwell Beneath the Earth have oftem learnt to see without light through long centuries groping in the darkness.</p>
+<p>Beneath the Earth there is no light - those who would plumb the depths should carry their own. A torch may burn out on a 1/6 each Dungeon Turn. Those who dwell Beneath the Earth have often learned to see without light through long centuries groping in the darkness.</p>
 <h3 id="movement">Movement</h3>
 <p>Cautious movement allows for a room to be explored each Dungeon Turn. This allows for mapping, trap checking, and close observation of the darkness.<br />
 Those abandoning caution could quadruple this, but are sure to become lost and stumble into any ambushes, trigger any traps etc.</p>
@@ -862,7 +870,7 @@ In a group is surprised, encounters begin with parties d6* 10’ away. Otherwise
 <p>Casting a spell requires a firm voice and the appropriate tome at hand. When you cast a spell, lose d3 HP as you cast. When casting, consume the resources used to cast, if relevant.<br />
 Books, wands, and other gizmos are used to when casting a spell. Calling upon greater powers is a dangerous endeavor and a spell can only be used once per day.<br />
 L refers to a character’s Level.<br />
-Unless otherwise noted a spell’s durration is L*10 minutes.</p>
+Unless otherwise noted a spell’s duration is L*10 minutes.</p>
 <h3 id="in-combat-1">In Combat</h3>
 <p>Casting a spell in combat requires a Mind Test, DC10 when targeting nothing, or against an enemy’s Warding when targeting an NPC. When you start casting all those that can hear are made aware of the magic and can attempt a counterspell.<br />
 Casting within Arm’s-reach of an enemy imposes disadvantage.<br />
@@ -901,7 +909,7 @@ A Crit Fail when casting or counterspelling results in a spell mishap. Roll belo
 </tr>
 <tr class="even">
 <td style="text-align: left;">16</td>
-<td style="text-align: left;">Any food carried by the caster or those within Arm’s-reach of the caster immedately spoils</td>
+<td style="text-align: left;">Any food carried by the caster or those within Arm’s-reach of the caster immediately spoils</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">21</td>
@@ -941,7 +949,7 @@ A Crit Fail when casting or counterspelling results in a spell mishap. Roll belo
 </tr>
 <tr class="even">
 <td style="text-align: left;">34</td>
-<td style="text-align: left;">The caster coughs up a thick black fluid. The fluid flows away as though in a hurry to be somewhere. The wizard will soon hear rumors and suffer accusations due ot the workings of asinister doppelganger.</td>
+<td style="text-align: left;">The caster coughs up a thick black fluid. The fluid flows away as though in a hurry to be somewhere. The wizard will soon hear rumors and suffer accusations due to the workings of a sinister doppelganger.</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">35</td>
@@ -949,26 +957,25 @@ A Crit Fail when casting or counterspelling results in a spell mishap. Roll belo
 </tr>
 <tr class="even">
 <td style="text-align: left;">36</td>
-<td style="text-align: left;">A small planar tear forms, permittiing appropriately sized things to travel between</td>
+<td style="text-align: left;">A small planar tear forms, permitting appropriately sized things to travel between</td>
 </tr>
 </tbody>
 </table>
 <h3 id="counterspelling">Counterspelling</h3>
-<p>To counterspell one must roll equal to or greater the HP lost by the original caster and succed a Mind Test of their own. If successful, the spell is dispersed.<br />
-Regardless of if the counterspeller succeeds or fails, they lose the HP.<br />
-A counterspell can be counterspelled by a yet uninvolved mage. Meet or beat the counterspell’s HP target.</p>
+<p>To counterspell an artifact or pactmage’s spell one must roll a DC(10+caster HD) to succeed. Additionally the counterspellers loses d3 HP and there’s a 1/6 chance of a spell mishap.<br />
+If there’s a mishap during counterspell from the 1/6 the spell is still otherwise countered.</p>
 <h2 id="gods-and-their-spells">Gods and Their Spells</h2>
-<p>Gods represent aspects of reality, and their relevence in a region dictates their status as tall or small. Such distinctions are social constructs applied to gods by humans. Gods grant many gifts to their followers, but most often they are objects, embued with spirits, clearly of their god. The spirits allow users to then cast magical effects.</p>
+<p>Gods represent aspects of reality, and their relevance in a region dictates their status as tall or small. Such distinctions are social constructs applied to gods by humans. Gods grant many gifts to their followers, but most often they are objects, imbued with spirits, clearly of their god. The spirits allow users to then cast magical effects.</p>
 <h2 id="tall-gods">Tall Gods</h2>
 <p>The following are some of most worshiped gods. They are considered tall nearly everywhere, and all have children gods worshiped in their own rights.</p>
 <h3 id="trade">Trade</h3>
-<p>A desendent of Rivers, Trade desires peaceful cooperative relationship between peoples. Places of worship are often trading posts or town squares. Often the god of politicians and merchants.<br />
-To become a pactmage of Commerce you must replace your tounge with silver and pledge to find peaceful solutions. You may never become broke. As a pactmage you may buy things at 2d10% less than list price and reation rolls are made at advantage.</p>
+<p>A descendant of Rivers, Trade desires peaceful cooperative relationship between peoples. Places of worship are often trading posts or town squares. Often the god of politicians and merchants.<br />
+To become a pactmage of Commerce you must replace your tongue with silver and pledge to find peaceful solutions. You may never become broke. As a pactmage you may buy things at 2d10% less than list price and reaction rolls are made at advantage.</p>
 <ul>
 <li><strong>Convince:</strong> For L minutes target gains advantage when negotiating and trading.<br />
 </li>
 <li><strong>Pacify:</strong> L creatures have an aversion to violence.</li>
-<li>**</li>
+<li><strong>Pyrite:</strong> For the next L minutes your coins appear of a more valuable metal. Making copper appear of silver and silver as gold.</li>
 </ul>
 <h3 id="nature">Nature</h3>
 <p>Nature believes the layers of the earth should remain unchurned. The things above should stay, and aspects of below such as metals should remain beneath.<br />
@@ -979,45 +986,88 @@ To become a pactmage of Nature you may never touch metal, taking 2d6 damage upon
 <li><strong>Heat Metal:</strong> Target metal or metal wearer takes d2 damage for each slot of metal items on them.</li>
 </ul>
 <h3 id="fire">Fire</h3>
-<p>Fire is the agent of chaos; chance. Worshipers are preachers of change and innovation. They are inventors and madmen alike. Shallow impulses and sudden concequences define their cast.<br />
-To become a pactmage of Fire you must regect the old. You must always speak the truth no matter the cost and refuse the lies you are told. As a pactmage you only take half damage from fire and have an innate knack for starting or snuffing fires.</p>
+<p>Fire is the agent of chaos; chance. Worshipers are preachers of change and innovation. They are inventors and madmen alike. Shallow impulses and sudden consequences define their cast.<br />
+To become a pactmage of Fire you must reject the old. You must always speak the truth no matter the cost and refuse the lies you are told. As a pactmage you only take half damage from fire and have an innate knack for starting or snuffing fires.</p>
 <ul>
-<li><strong>Combust:</strong> Target flamable object bursts into flame.</li>
+<li><strong>Combust:</strong> Target flammable object bursts into flame.</li>
 <li><strong>Soulfire:</strong> Target artifact can only be used at disadvantage.</li>
 <li><strong>Immolate:</strong> A jet of flame bursts out dealing 2d6 damage to those in its path.</li>
 </ul>
 <h3 id="earth">Earth</h3>
 <p>Earth is the provider and dictator of life. It’s presence decides where humans can and cannot live. Farmers, explorers, and miners all hold respect for Earth. Earth brings bounty to those who support their efforts.<br />
-To become a pactmage of Earth you must bury your heart in the earth. Your soul cannot be given or parted. As a pactmage you add your Favor to scrounging rolls. You always know the fastest way out of a cave. When you may become lost there’s a 2/6 chace you do not.</p>
+To become a pactmage of Earth you must bury your heart in the earth. Your soul cannot be given or parted. As a pactmage you add your Favor to scrounging rolls. You always know the fastest way out of a cave. When you may become lost there’s a 2/6 chance you do not.</p>
 <ul>
 <li><strong>Summon Cubes:</strong> L times per round, summon or destroy 3 foot cubes of earth. New cubes must be affixed to the earth or to the other cubes.</li>
-<li><strong>Sculpt Elements:</strong> All inanimante material behaves like clay in your hands.</li>
+<li><strong>Sculpt Elements:</strong> All inanimate material behaves like clay in your hands.</li>
 <li><strong>Objectify:</strong> You become any inanimate object between the size of a grand piano and an apple.</li>
 </ul>
+<h3 id="chaos">Chaos</h3>
+<p>Chaos is not a cruel god. Mearly a random one. As most people desire a consistencey, a progression in life, Chaos can seem alien; hateful. Pactmages are often shunned, but there is always a place with those looking to change the status quo.<br />
+To become a pactmage of Chaos you must embrace their effects, propegating chaos in your sphere. You must never accept consistency</p>
+<p>Raise Spirit Phycometry Random Spell</p>
+<h2 id="additional-spells">Additional Spells</h2>
+<ul>
+<li><strong>Anthropomorphize:</strong> A touched animal either gains human intelligence or human apperance for L days.</li>
+<li><strong>Astral Prison:</strong> An object is frozen in time and space within an invulnerable crystal shell.</li>
+<li><strong>Bend Fate:</strong> Roll L+1d20s. Whenever you must roll a d20 after casting the spell, you must choose and then discard one of the rolled results until until they are all gone.</li>
+<li><strong>Befuddle:</strong> L creatures of your choice are unable to form new short term memories for the duration of the spell.</li>
+<li><strong>Catherine:</strong> A woman wearing a blue dress appears until the end of spell. She will obey polite, safe requests.</li>
+<li><strong>Command:</strong> A creature obeys a single, three-word command that does not harm it.</li>
+<li><strong>Echo:</strong> Copy the last spell cast and choose new targets.</li>
+<li><strong>Elasticity:</strong> Your body can stretch up to L*10ft.</li>
+<li><strong>Fog Cloud:</strong> Dense fog spreads out from you.</li>
+<li><strong>Icy Touch:</strong> A thick ice leayer spreads across a touched surface, up to L*10’ in radius.</li>
+<li><strong>Marbles:</strong> L targets pockets fill with marbles, pushing their inventory down and filling the top empty slots with marbles. Excess marbles spill forth until the spell stops.</li>
+<li><strong>Masquerade:</strong> L characters’ appearances and voices become identical to a touched character.</li>
+<li><strong>Objectify:</strong> You become any inanimate object between the size of a grand piano and an apple.</li>
+<li><strong>Pacify:</strong> L creaturs have an aversion to violence.</li>
+<li><strong>Psychometry:</strong> The GM answers L yes or no questions about a touched object.</li>
+<li><strong>Raise Spirit:</strong> The spirit of a dead body manifests and will answer L questions.<br />
+</li>
+<li><strong>Reorganize:</strong> Target character’s inventory is randomly shuffled, including held items.</li>
+<li><strong>Sound:</strong> You create an illusiory sounds that seem to come from a direction of your choice.</li>
+<li><strong>Sculpt Elements:</strong> All inanimate material behaves like clay in your hands.</li>
+<li><strong>Spectical:</strong> A clearly unreal but impressive illusion of your choice appears under your control. It may be up to the size of a palace and has full motion and sound.</li>
+<li><strong>Switcheroo:</strong> L+1 creatures instantly switch places. Determine randomly where they end up.</li>
+<li><strong>Summon Cubes:</strong> L times per round summon or destroy 3 foot cubes of earth. new cubes must be affiedto the earth or to other cubes.</li>
+<li><strong>Thaumaturgic Anchor:</strong> Object becomes the target of every spell cast near it.</li>
+<li><strong>Thicket:</strong> A thicket of trees and dense brush up to L*40’ wide suddenly sprouts up.</li>
+<li><strong>Time Rush:</strong> Time in a 40’ bubble starts moving 10 times faster.</li>
+<li><strong>Vilch:</strong> L visible items teleport to your hands.</li>
+<li><strong>Ward:</strong> Choose one thing that cannot cross an entrance: Living creatures, dead creatures, projectiles, or metal.</li>
+</ul>
 <h2 id="becoming-an-pactmage">Becoming an Pactmage</h2>
-<p>Becoming an pactmage should be a carefully measured choice. As an pactmage you are dedicated to furthering the goals of a diety. You can innately cast certain spells and gain access to resources and contacts.<br />
+<p>Becoming an pactmage should be a carefully measured choice. As an pactmage you are dedicated to furthering the goals of a deity. You can innately cast certain spells and gain access to resources and contacts.<br />
 To become an pactmage, a character must complete a Boast in the interest of the god and dedicate the accomplishment to said god.</p>
 <h3 id="favor">Favor</h3>
 <p>An pactmage has to be conscious of staying in Favor of their god. Similar to an attribute, Favor is a value from -5 to +5. When casting spells of the pactmage’s god, add Favor to the roll instead of Mind.<br />
-Several things change Favor.<br />
-+ After each long rest set Favor closer to 0 by 1. + Magic of another god used by the pactmage reduces Favor by 1. + Actions taken against the interest of the god reduces Favor by 1. + Sacrifices worth at least 1g increase Favor by 1. + Natural Crits increase Favor by 1. + Natural Failures decrease Favor by 1. + Boasts completed in the interested of the god increase Favor by 3.</p>
+Several things change Favor.</p>
+<ul>
+<li>After each long rest set Favor closer to 0 by 1.</li>
+<li>Magic of another god used by the pactmage reduces Favor by 1.</li>
+<li>Actions taken against the interest of the god reduces Favor by 1.</li>
+<li>Sacrifices worth at least 1g increase Favor by 1.</li>
+<li>Natural Crits increase Favor by 1.</li>
+<li>Natural Failures decrease Favor by 1.</li>
+<li>Boasts completed in the interested of the god increase Favor by 3.</li>
+</ul>
 <h1 id="monsters">Monsters</h1>
 <p>NPCs and Monsters in Greenhack are broken down with common stats for easy understanding and simple conversion from other systems. Being monsters however they have plenty of exceptions to the rules.</p>
 <h3 id="hit-dice-hd">Hit Dice (HD)</h3>
-<p>The Hit Dice a NPC reflects the challenge it represents, roughly equivelant to a player level. It is used to calculate other stats and can be added as a bonus to rolls the monster makes when attempting things.</p>
+<p>The Hit Dice a NPC reflects the challenge it represents, roughly equivalent to a player level. It is used to calculate other stats and can be added as a bonus to rolls the monster makes when attempting things.</p>
 <h3 id="hit-protection-hp">Hit Protection (HP)</h3>
 <p>NPC HP is similar to that of the player, but unlike a player character the NPC dies when HP is reduced to 0 unless explicitly non-lethally.<br />
 HP is usually calculated by taking the average or rolling a number of d6s equal to the HD of the creature.</p>
 <h3 id="armor-class-ac">Armor Class (AC)</h3>
-<p>Armor class has a purpose similar to a character’s Dodge Save. It is a target value that players try and exeed when they attack. It functions differently in that it is general enough to reflect the numberous ways a monster may resist attack. It also covers the context of armor, reducing the number of rolls in combat to keep focus on player actions.<br />
+<p>Armor class has a purpose similar to a character’s Dodge Save. It is a target value that players try and exceed when they attack. It functions differently in that it is general enough to reflect the numerous ways a monster may resist attack. It also covers the context of armor, reducing the number of rolls in combat to keep focus on player actions.<br />
 An average NPC’s AC is usually equal to 10+HD but can vary depending on the nature of the monster.</p>
 <h3 id="conviction-co">Conviction (CO)</h3>
-<p>The monster’s conviction represents how much it wants to keep what its doing. This stat is reduced as allies fall and health dwindle. On its turn the conviction of a creature may be tested if its considering fleeing by rolling 2d6. If it rolls over its conviction, the monster flees. Players can also force a creature to test conviction or lower it through negotioation and chat.</p>
+<p>The monster’s conviction represents how much it wants to keep what its doing. This stat is reduced as allies fall and health dwindle. On its turn the conviction of a creature may be tested if its considering fleeing by rolling 2d6. If it rolls over its conviction, the monster flees. Players can also force a creature to test conviction or lower it through negotiation and chat.</p>
 <h3 id="presence-warding-pr-wa">Presence &amp; Warding (PR &amp; WA)</h3>
-<p>Presence represnts the intellegence of the creature while warding represents their magical control. These numbers function similar to AC but are tested against when player characters attempt to outsmart or magically alter NPCs.<br />
+<p>Presence represents the intelligence of the creature while warding represents their magical control. These numbers function similar to AC but are tested against when player characters attempt to outsmart or magically alter NPCs.<br />
 Presence and Warding are both highly variable depending on the creature’s nature, but the same rule of 10+HD can sometimes be followed.</p>
 <h3 id="damage-1">Damage</h3>
-<p>Damage details how much damage the NPC can do and how it accompishes it. Often it will be listed as d6 claws, d8 tail. This allows the GM to describe the attack and provides players with options on limiting damage.<br />
+<p>Damage details how much damage the NPC can do and how it accomplishes it. Often it will be listed as d6 claws, d8 tail. This allows the GM to describe the attack and provides players with options on limiting damage.<br />
 Average damage at a certain HD is usually a number of d6s equal to HD.</p>
 <h2 id="sample-monsters">Sample Monsters</h2>
 <ul>
@@ -1070,7 +1120,7 @@ Average damage at a certain HD is usually a number of d6s equal to HD.</p>
 <tr class="odd">
 <td style="text-align: left;">Box, small iron</td>
 <td style="text-align: left;">15</td>
-<td style="text-align: left;">6slot capacity, 7 slots</td>
+<td style="text-align: left;">6 slot capacity, 7 slots</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Caltrops</td>
@@ -1110,10 +1160,10 @@ Average damage at a certain HD is usually a number of d6s equal to HD.</p>
 <tr class="odd">
 <td style="text-align: left;">Chest, large wooden†</td>
 <td style="text-align: left;">15</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">12 slot capacity</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Chest, small wooden†</td>
+<td style="text-align: left;">Chest, small wooden</td>
 <td style="text-align: left;">8</td>
 <td style="text-align: left;">6 slot capacity, 7 slots</td>
 </tr>
@@ -1193,7 +1243,7 @@ Average damage at a certain HD is usually a number of d6s equal to HD.</p>
 <td style="text-align: left;"></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">lockpicks</td>
+<td style="text-align: left;">Lockpicks</td>
 <td style="text-align: left;">8</td>
 <td style="text-align: left;"></td>
 </tr>
@@ -1372,7 +1422,7 @@ Average damage at a certain HD is usually a number of d6s equal to HD.</p>
 <td style="text-align: left;">Battle-Axe†</td>
 <td style="text-align: left;">20</td>
 <td style="text-align: left;">d8</td>
-<td style="text-align: left;">May sacrifice 3 damage from an attack to attempt a weapon/shield strip. Roll a second attack - if succesful, a weapon or shield can be ripped form the grip of the opponet.</td>
+<td style="text-align: left;">May sacrifice 3 damage from an attack to attempt a weapon/shield strip. Roll a second attack - if successful, a weapon or shield can be ripped form the grip of the opponent.</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Blunderbuss‡</td>
@@ -1468,13 +1518,13 @@ Average damage at a certain HD is usually a number of d6s equal to HD.</p>
 <td style="text-align: left;">Shortbow†‡</td>
 <td style="text-align: left;">15</td>
 <td style="text-align: left;">d6</td>
-<td style="text-align: left;">Can make a third attack if all actions are used and the user takes d3 damage.</td>
+<td style="text-align: left;">Can make a third attack if all actions are used and the user takes d3 damage. Uses STR instead of MIN</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Sling‡</td>
 <td style="text-align: left;">1</td>
 <td style="text-align: left;">d4</td>
-<td style="text-align: left;">Can be used ot launch grenades.</td>
+<td style="text-align: left;">Can be used ot launch grenades. Can use either STR or MIN.</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Spear†</td>
@@ -1500,5 +1550,14 @@ Average damage at a certain HD is usually a number of d6s equal to HD.</p>
 ‡ <em>Indicates a ranged weapon.</em><br />
 Loading weapons require a AGI action to be reloaded.<br />
 Riposte: Melee attacks that are sucessfuly dodged allow the defender to make a counter attack at disadvantage.</p>
-</body>
-</html>
+<h1 id="credits">Credits</h1>
+<ul>
+<li>Luke Gearing for Boasts, Saves, Weapons/inventory, and Travel</li>
+<li>Mork Borg for inventory &amp; feats.</li>
+<li>Knave for the spells and spellcasting</li>
+<li>Troika! for the spell mishaps</li>
+<li>Hunt: Showdown for feats</li>
+<li>Blogs for useage dice, expedition resources, and probably more</li>
+<li>Jarrett for motivation</li>
+<li>Andrew, Archer, Ethan, Mia, and Phillip for playtesting</li>
+</ul>
