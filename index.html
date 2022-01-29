@@ -215,17 +215,30 @@
 <header id="title-block-header">
 <h1 class="title">Greenhack</h1>
 <p class="subtitle">1.21</p>
-<p class="author">Rolland</p>
+<p class="author">Rolland Caulkins, Andrew Murdoch, Ethan Talbert</p>
 </header>
+
+
+
+
 <h1 id="changelog">Changelog</h1>
+<h2 id="most-recent">Most Recent</h2>
+<ul>
+<li>Added clarification around movement in combat.<br />
+</li>
+<li>Added more Feats.</li>
+<li>Changed crit fails to break equipment rather than expose. Extra bad for blackpowder weapons.</li>
+<li>Added rules for attacking invisible targets. (Lancer).</li>
+</ul>
+<h2 id="other-changes-since-last-played">Other Changes Since Last Played</h2>
 <ul>
 <li>Changed counterspell system.</li>
 <li>Added coin rules to inventory.</li>
 <li>Added more spells than ever before.</li>
 <li>Modified boasts to allow feat progression.</li>
 <li>nerfed spell level powering because speeder ‘level progression’</li>
-<li>changed bow and sling to increase flexability.</li>
-<li>ensured rules for melee and ranged weapons were differentiated.</li>
+<li>changed bow and sling to increase flexibility.</li>
+<li>ensured rules for melee and ranged weapons were differentiated</li>
 </ul>
 <h1 id="characters">Characters</h1>
 <p>Characters in Greenhack are human. In debt and often on the run they search for ways to finance their continued existance.</p>
@@ -295,15 +308,16 @@ Only one Boast per character can be pending at a time.</p>
 <h3 id="feats">Feats</h3>
 <p>Mutations, feats, call them what you will. As characters adventure they take on feats. Feats help define a character’s specialty and give them little exceptions to the rules.</p>
 <ul>
-<li><strong>Adrenaline:</strong></li>
+<li><strong>Adrenaline:</strong> HP is restored to full when an ally fails at Death’s Door.</li>
 <li><strong>Ambidextrous:</strong> Allows the reload action to reload multiple held weapons.</li>
 <li><strong>Assailant:</strong> Whether your side passes or fails the initiative roll, you may always act first if your action involves inflicting harm.</li>
 <li><strong>Beastface:</strong></li>
 <li><strong>Blade Seer:</strong></li>
+<li><strong>Bloodbound:</strong> Form a pact with a willing participant. You can communicate by thought, no matter the distance. This never goes away. Whatever one experiences, so does the other. This includes injury, healing, and death.</li>
 <li><strong>Bloodless:</strong></li>
 <li><strong>Bulwark:</strong> Explosions cause half damage.</li>
 <li><strong>Conduit:</strong> Roll twice for lost HP when casting and keep either.</li>
-<li><strong>Dauntless:</strong></li>
+<li><strong>Dauntless:</strong> When wielding a weapon with Riposte, you can decline to Dodge altogether to Riposte with Advantage after the enemy’s damage.</li>
 <li><strong>Declaw:</strong> Natural weapons - punches, claws, stingers - deal half damage to the character.</li>
 <li><strong>Frontiersman:</strong></li>
 <li><strong>Gator Legs:</strong> Navigate calm waters as though it was a simple as walking.</li>
@@ -312,7 +326,7 @@ Only one Boast per character can be pending at a time.</p>
 <li><strong>Herbalist:</strong></li>
 <li><strong>Hornskin:</strong> Reduce blunt damage by 1d2 before armor.</li>
 <li><strong>Hundred Hands:</strong> The character can roll twice and choose the better when searhing through their pack.</li>
-<li><strong>Iron Sharpshooter:</strong> Spend all actions in a turn to shoot a black powder weapon with advantage.</li>
+<li><strong>Iron Sharpshooter:</strong> Spend all actions in a turn to shoot a blackpowder weapon with advantage.</li>
 <li><strong>Kiteskin:</strong> Damage from falling is halved.</li>
 <li><strong>Lightfoot:</strong> Rolls for sneaking are nade at advantage.</li>
 <li><strong>Magpie:</strong> Picking things up does not require an Agility Action in combat.</li>
@@ -320,19 +334,19 @@ Only one Boast per character can be pending at a time.</p>
 <li><strong>Necromancer:</strong></li>
 <li><strong>Packmule:</strong> Increase total inventory slots to 18.</li>
 <li><strong>Piper:</strong> You speak with rats: whistling allows you to attract d4 of them. They might not have reliable information but are always happy to converse.</li>
-<li><strong>Pitcher:</strong></li>
+<li><strong>Pitcher:</strong> Thrown weapons deal an extra d4 damage. Crits stun as Club.</li>
 <li><strong>Poacher:</strong></li>
 <li><strong>Poison Sense:</strong></li>
 <li><strong>Quartermaster:</strong> Roll usage dice with advantage.</li>
 <li><strong>Resilience:</strong> When you succeed a Death’s Door Test, roll d6 for regained HP.</li>
-<li><strong>Salveskin:</strong> Reduce fire damage by d2 before armor.</li>
+<li><strong>Salveskin:</strong> Suceptible to herbal remidies, healing from such sources heal twice as much.</li>
 <li><strong>Serpent:</strong> Advantage when trying to convince someone to do something against their best interest.</li>
 <li><strong>Silent Killer:</strong> Advantage when attacking an unaware victim with a melee weapon.</li>
 <li><strong>Steady Aim:</strong> Spend an action to gain advantage when shooting a weapon.</li>
 <li><strong>Steeled:</strong> A character suffers no penalty when casting a spell within Arm’s-reach of the enemies.</li>
 <li><strong>Tomahawk:</strong> Throw melee weapons for original weapon’s damage value.</li>
 <li><strong>Vigilant:</strong> You can never be the victim of a surprise attack. Additionally, your side takes initiative on a 3+.</li>
-<li><strong>Vigor:</strong></li>
+<li><strong>Vigor:</strong> Successes at Death’s Door restore HP to full.</li>
 <li><strong>Vulture:</strong> Roll twice when looting bodies.</li>
 <li><strong>Whispersmith:</strong></li>
 </ul>
@@ -397,15 +411,19 @@ To make a Save, roll a d20; attempting to equal or best the Save’s value.</p>
 <p>Critical Success (Crit) occurs when you roll a natural 20. When you roll a Crit out of combat, the event goes better than anticipated.<br />
 When attacking in combat, roll twice the dice for damage. While defending, a critical allows you to attack back without using a Riposte (see weapons table).</p>
 <h3 id="critical-failure">Critical Failure</h3>
-<p>Critical Fail (Crit Fail) occurs when you roll a natural 1. Out of combat the Test or Save fails with added consequence. In combat, a critical failure when attacking leaves you Exposed until the start of your next turn. When defending it means you take double damage.</p>
+<p>Critical Fail (Crit Fail) occurs when you roll a natural 1. Out of combat the Test or Save fails with added consequence. In combat, a critical failure when attacking means the used equipment has broken, an attempt to mend it can be made after combat. When defending it means you take double damage.<br />
+When blackpowder weapons break upon firing, they do so explosively. The wielder takes d6 damage and attempt a PHY Save or become blinded for d6 Rounds</p>
+<h3 id="mending-equipment">Mending Equipment</h3>
+<p>When equipment breaks an attempt to mend it can be made once. If the attempt fails, only magic can fix the gear. Make a DC12 Mind Test to attempt a repair. Advantage with access to proper tools.</p>
 <h2 id="combat">Combat</h2>
 <h3 id="initiative">Initiative</h3>
 <p>In combat characters have fewer choices about what actions they can take. Combat is organized into Rounds of roughly 6 seconds where all parties have a Turn.<br />
 At the start of each Round and at the start of combat, a player rolls a d6. On a 4+ the roller’s Turn begins first. Otherwise an enemy’s goes first. The subsequent Turn is chosen by the person currently taking a Turn.<br />
 A surprised party does not roll for the first round. They lose out on the initiative.</p>
-<h3 id="movement-ranges">Movement &amp; Ranges</h3>
+<h3 id="movement--ranges">Movement &amp; Ranges</h3>
 <p>Movement in Greenhack is abstracted, Fights happen near enough to assume things are in range of projectile weapons. Perhaps something might call for a long shot, but targets are always with in firing range.<br />
-Importantly you need to know if you’re in arm’s-reach of someone, which permits the usage of melee weapons while impairing casting and shooting (Disadvantage).</p>
+Importantly you need to know if you’re in arm’s-reach of someone, which permits the usage of melee weapons while impairing casting and shooting (Disadvantage).<br />
+When using a grid in combat, characters can move 25’ in a round per Agility action. When attempting to move out of Arm’s-reach, make a DC(10+Enemy HD) Agility Test.</p>
 <h3 id="actions">Actions</h3>
 <p>In Greenhack, characters get an Action for each Attribute. When it’s their turn, they can use any number of Actions as they see fit. You can sacrifice two actions to take a second action of the same stat. Announce the sacrificed Attributes before rolling for the second Action.</p>
 <table>
@@ -462,11 +480,12 @@ Importantly you need to know if you’re in arm’s-reach of someone, which perm
 </tr>
 </tbody>
 </table>
-<h3 id="attacking-defending">Attacking &amp; Defending</h3>
+<h3 id="attacking--defending">Attacking &amp; Defending</h3>
 <p>Attacks are made by making the appropriate Test, rolling over the target’s AC. This is generally Strength for melee and mind for ranged. Modifiers both negative and positive may be issued to the Test, depending on circumstance. If successful, roll for damage.<br />
 If you miss with a ranged attack there is a 50% chance of hitting someone else within Arm’s-reach of the target.<br />
 When defending, roll a Dodging Save. This number is modified by armor and the usual things. If you fail, the GM will tell you how much damage you take; reduced by character’s armor.<br />
-Those caught unaware when attacked such as when ambushed can be killed when struck.</p>
+Those caught unaware when attacked such as when ambushed can be killed when struck.<br />
+Attacking the unseen requires a d20 roll before the attack is attempted. Only on a 11+ can the attack be attempted.</p>
 <h3 id="maneuvers">Maneuvers</h3>
 <p>When an attack is success and before damage is rolled, the attacker can present a choice to the defender. Either they take the damage, or the attacker preforms a maneuver. This could be anything from knocking them down, blinding with sand, pinning them etc.<br />
 Players can force a maneuver by attacking with disadvantage and GM approval. This must be declared before the attack is rolled.</p>
@@ -870,7 +889,7 @@ In a group is surprised, encounters begin with parties d6* 10’ away. Otherwise
 <p>Casting a spell requires a firm voice and the appropriate tome at hand. When you cast a spell, lose d3 HP as you cast. When casting, consume the resources used to cast, if relevant.<br />
 Books, wands, and other gizmos are used to when casting a spell. Calling upon greater powers is a dangerous endeavor and a spell can only be used once per day.<br />
 L refers to a character’s Level.<br />
-Unless otherwise noted a spell’s duration is L*10 minutes.</p>
+Unless otherwise noted a spell’s duration is L*5 minutes.</p>
 <h3 id="in-combat-1">In Combat</h3>
 <p>Casting a spell in combat requires a Mind Test, DC10 when targeting nothing, or against an enemy’s Warding when targeting an NPC. When you start casting all those that can hear are made aware of the magic and can attempt a counterspell.<br />
 Casting within Arm’s-reach of an enemy imposes disadvantage.<br />
@@ -1063,7 +1082,7 @@ HP is usually calculated by taking the average or rolling a number of d6s equal 
 An average NPC’s AC is usually equal to 10+HD but can vary depending on the nature of the monster.</p>
 <h3 id="conviction-co">Conviction (CO)</h3>
 <p>The monster’s conviction represents how much it wants to keep what its doing. This stat is reduced as allies fall and health dwindle. On its turn the conviction of a creature may be tested if its considering fleeing by rolling 2d6. If it rolls over its conviction, the monster flees. Players can also force a creature to test conviction or lower it through negotiation and chat.</p>
-<h3 id="presence-warding-pr-wa">Presence &amp; Warding (PR &amp; WA)</h3>
+<h3 id="presence--warding-pr--wa">Presence &amp; Warding (PR &amp; WA)</h3>
 <p>Presence represents the intelligence of the creature while warding represents their magical control. These numbers function similar to AC but are tested against when player characters attempt to outsmart or magically alter NPCs.<br />
 Presence and Warding are both highly variable depending on the creature’s nature, but the same rule of 10+HD can sometimes be followed.</p>
 <h3 id="damage-1">Damage</h3>
@@ -1561,3 +1580,5 @@ Riposte: Melee attacks that are sucessfuly dodged allow the defender to make a c
 <li>Jarrett for motivation</li>
 <li>Andrew, Archer, Ethan, Mia, and Phillip for playtesting</li>
 </ul>
+</body>
+</html>
