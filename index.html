@@ -8,31 +8,80 @@
   <meta name="author" content="Rolland C" />
   <title>Greenhack</title>
   <style>
-    
-  .sidenav {
-    height: 90%;
-    width: 250px;
-    position: fixed;
-    z-index: 1;
-    top: 2;
-    left: 0;
-    background-color: #fdfdfd;
-    overflow-x: hidden;
-    overflow-y:auto
-    padding-top: 0px;
-  }
+body {
+  font-family: "Georgia", serif;
+}
 
-  .sidenav a {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #1a1a1a;
-    display: block;
-  }
+/* Fixed sidenav, full height */
+.sidenav {
+  height: 90%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 2;
+  left: 0;
+  background-color: #fdfdfd;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding-top: 0px;
+  font-family: "Georgia", serif;
+}
 
-  .sidenav a:hover {
-    color: #22b374;
-  }
+/* Style the sidenav links and the dropdown button */
+.sidenav a, .dropdown-btn {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #1a1a1a;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+/* On mouse-over */
+.sidenav a:hover, .dropdown-btn:hover {
+  color: #22b374;
+}
+
+
+
+
+/* Main content */
+.main {
+  margin-left: 250px; /* Same as the width of the sidenav */
+  font-size: 20px; /* Increased text to enable scrolling */
+  padding: 0px 15px;
+}
+
+/* Add an active class to the active dropdown button */
+.active {
+  background-color: #e8e8e8;
+  color: #1a1a1a;
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+  display: none;
+  background-color: #efefef;
+  padding-left: 8px;
+}
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
+
+/* Some media queries for responsiveness */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
 
 
 
@@ -40,205 +89,154 @@
 
 
 
-
-
-
-
-
-    html {
-      line-height: 1.5;
-      font-family: Georgia, serif;
-      font-size: 20px;
-      color: #1a1a1a;
-      background-color: #fdfdfd;
-    }
-    body {
-      margin: 0 auto;
-      max-width: 36em;
-      padding-left: 50px;
-      padding-right: 50px;
-      padding-top: 50px;
-      padding-bottom: 50px;
-      hyphens: auto;
-      overflow-wrap: break-word;
-      text-rendering: optimizeLegibility;
-      font-kerning: normal;
-    }
-    @media (max-width: 600px) {
-      body {
-        font-size: 0.9em;
-        padding: 1em;
-      }
-    }
-    @media print {
-      body {
-        background-color: transparent;
-        color: black;
-        font-size: 12pt;
-      }
-      p, h2, h3 {
-        orphans: 3;
-        widows: 3;
-      }
-      h2, h3, h4 {
-        page-break-after: avoid;
-      }
-    }
-    p {
-      margin: 1em 0;
-    }
-    a {
-      color: #1a1a1a;
-    }
-    a:visited {
-      color: #1a1a1a;
-    }
-    img {
-      max-width: 100%;
-    }
-    h1, h2, h3, h4, h5, h6 {
-      margin-top: 1.4em;
-    }
-    h5, h6 {
-      font-size: 1em;
-      font-style: italic;
-    }
-    h6 {
-      font-weight: normal;
-    }
-    ol, ul {
-      padding-left: 1.7em;
-      margin-top: 1em;
-    }
-    li > ol, li > ul {
-      margin-top: 0;
-    }
-    blockquote {
-      margin: 1em 0 1em 1.7em;
-      padding-left: 1em;
-      border-left: 2px solid #e6e6e6;
-      color: #606060;
-    }
-    code {
-      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
-      font-size: 85%;
-      margin: 0;
-    }
-    pre {
-      margin: 1em 0;
-      overflow: auto;
-    }
-    pre code {
-      padding: 0;
-      overflow: visible;
-      overflow-wrap: normal;
-    }
-    .sourceCode {
-     background-color: transparent;
-     overflow: visible;
-    }
-    hr {
-      background-color: #1a1a1a;
-      border: none;
-      height: 1px;
-      margin: 1em 0;
-    }
-    table {
-      margin: 1em 0;
-      border-collapse: collapse;
-      width: 100%;
-      overflow-x: auto;
-      display: block;
-      font-variant-numeric: lining-nums tabular-nums;
-    }
-    table caption {
-      margin-bottom: 0.75em;
-    }
-    tbody {
-      margin-top: 0.5em;
-      border-top: 1px solid #1a1a1a;
-      border-bottom: 1px solid #1a1a1a;
-    }
-    th {
-      border-top: 1px solid #1a1a1a;
-      padding: 0.25em 0.5em 0.25em 0.5em;
-    }
-    td {
-      padding: 0.125em 0.5em 0.25em 0.5em;
-    }
-    header {
-      margin-bottom: 4em;
-      text-align: center;
-    }
-    #TOC li {
-      list-style: none;
-    }
-    #TOC a:not(:hover) {
-      text-decoration: none;
-    }
-    code{white-space: pre-wrap;}
-    span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
-  </style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
-</head>
+<script async src='/cdn-cgi/bm/cv/669835187/api.js'></script><script async src='/cdn-cgi/bm/cv/669835187/api.js'></script></head>
 <body>
+
+
+
+
+
+
+
+
 <div class="sidenav">
-  <strong><a href="#characters">Characters</a></strong>
-  <a href="#progression">Progression</a>
-  <strong><a href="#mechanics">Mechanics</a></strong>
-  <a href="#combat">Combat</a>
-  <strong><a href="#inventory">Inventory</a>
-  <a href="#hirelings">Hirelings</a>
-  <a href="#travel">Travel</a></strong>
-  <a href="#abreast-the-sea">Abreast the Sea</a>
-  <a href="#upon-the-land">Upon the Land</a>
-  <a href="#beneath-the-earth">Beneath the Earth</a>
-  <strong><a href="#spellcraft">Spellcraft</a></strong>
-  <a href="#casting-a-spell">Casting a Spell</a>
-  <a href="#gods-and-their-spells">Gods and Their Spells</a>
-  <a href="#tall-gods">Tall Gods</a>
-  <a href="#additional-spells">Additional Spells</a>
-  <a href="#becoming-an-pactmage">Becoming a Pactmage</a>
-  <strong><a href="#monsters">Monsters</a></strong>
-  <a href="#sample-monsters">Sample Monsters</a>
-  <strong><a href="#equipment">Equipment</a></strong>
+  <button class="dropdown-btn">Characters 
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="#attributes">Attributes</a>
+    <a href= "#saves">Saves</a>
+    <a href="#hit-protection">Hit Protection</a>
+    <a href="#skills">Skills</a>
+    <a href="#language">Language</a>
+    <a href="#money">Money</a>
+    <strong><a href="#progression">Progression</a></strong>
+    <a href="#boasts">Boasts</a>
+    <a href="#feats">Feats</a>
+  </div>
+
+  <button class="dropdown-btn">Mechanics 
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="#the-attributes">The Attributes</a>
+    <a href="#the-saves">The Saves</a>
+    <a href="#critical-success">Critical Success</a>
+    <a href="#critical-failure">Critical Failure</a>
+    <a href="#mending-equipment">Mending Equipment</a>
+    <strong><a href="#combat">Combat</a></strong>
+    <a href="#initiative">Initiative</a>
+    <a href="#movement--ranges">Movement & Ranges</a>
+    <a href="#actions">Actions</a>
+    <a href="#attacking--defending">Attacking & Defending</a>
+    <a href="maneuvers">Maneuvers</a>
+    <a href="#damage">Damage</a>
+    <a href="#armor">Armor</a>
+    <a href="#deaths-door">Death's Door</a>
+    <a href="#Recovery">Recovery</a>
+  </div>
+
+  <button class="dropdown-btn">Inventory
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="#in-combat">In Combat</a>
+    <a href="#usage-dice">Useage Dice</a>
+    <a href="#ammo">Ammo</a>
+    <a href="#expedition-resources">Expedition Resources</a>
+  </div>
+
+  <button class="dropdown-btn">Hirelings
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="#types-or-hirelings">Types of Hirelings</a>
+    <a href="#adventuring-with-hirelings">Adventuring With Hirelings</a>
+  </div>
+
+  <button class="dropdown-btn">Travel
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <strong><a href="#abreast-the-sea">Abrest the Sea</a></strong>
+    <a href="#wind">Wind</a>
+    <a href="#storms">Storms</a>
+    <a href="#becoming-lost">Becoming Lost</a>
+    <a href="#naval-encounters">Naval Encounters</a>
+    <a href="#naval-combat">Naval Combat</a>
+    <a href="#rounds-and-turn-order">Rounds and Turn Order</a>
+    <a href="#ramming">Ramming</a>
+    <a href="#boarding">Boarding</a>
+    <a href="#sinking">Sinking</a>
+    <strong><a href="#upon-the-land">Upon the Land</a></strong>
+    <a href="#travel-1">Travel</a>
+    <a href="#becoming-lost">Becoming Lost</a>
+    <a href="#encounter">Encounters</a>
+    <strong><a href="#beneath-the-earth">Beneath the Earth</a></strong>
+    <a href="#timekeeping">Timekeeping</a>
+    <a href="#light">Light</a>
+    <a href="#movement">Movement</a>
+    <a href="#encounters">Encounters</a>
+  </div>
+
+  <button class="dropdown-btn">Spellcraft
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <strong><a href="#casting-a-spell">Casting a Spell</a></strong>
+    <a href="#in-combat-1">In Combat</a>
+    <a href="#counterspelling">Counterspelling</a>
+    <strong><a href="#gods-and-their-spells">Gods & and Their Spells</a></strong>
+    <strong><a href="#tall-gods">Tall Gods</a></strong>
+    <a href="#trade">Trade</a>
+    <a href="#nature">Nature</a>
+    <a href="#fire">Fire</a>
+    <a href="#earth">Earth</a>
+    <a href="#chaos">Chaos</a>
+    <strong><a href="#additional-spells">Additional Spells</a></strong>
+    <strong><a href="#becoming-an-pactmage">Becoming a Pactmage</a></strong>
+    <a href="#favor">Favor</a>
+  </div>
+
+  <button class="dropdown-btn">Monsters
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="#hit-dice-hd">Hit Dice (HD)</a>
+    <a href="#hit-protection-hp">Hit Protection (HP)</a>
+    <a href="#armor-class-ac">Armor Class (AC)</a>
+    <a href="#conviction-co">Conviction (CO)</a>
+    <a href="#presence--warding-pr--wa">Presence & Warding (PR & WA)</a>
+    <a href="#damage-1">Damage</a>
+    <strong><a href="#sample-monsters">Sample Monsters</a></strong>
+  </div>
+  <a href="#equipment">Equipment</a>
+  <a href="#credits">Credits</a>  
 </div>
+ 
+
+
 
 
 
 <header id="title-block-header">
 <h1 class="title">Greenhack</h1>
-<p class="subtitle">1.28</p>
-<p class="author">Rolland Caulkins, Andrew Murdoch, Ethan Talbert</p>
-</header>
+<p class="subtitle">1.30</p>
+<p class="author">Rolland C</p>
+</header> 
 
 
 
+<div class="main">
 
 <h1 id="changelog">Changelog</h1>
 <h2 id="most-recent">Most Recent</h2>
 <ul>
-<li>Added clarification around movement in combat.<br />
-</li>
-<li>Added more Feats.</li>
-<li>Changed crit fails to break equipment rather than expose. Extra bad for blackpowder weapons.</li>
-<li>Added rules for attacking invisible targets. (Lancer).</li>
-</ul>
-<h2 id="other-changes-since-last-played">Other Changes Since Last Played</h2>
-<ul>
-<li>Changed counterspell system.</li>
-<li>Added coin rules to inventory.</li>
-<li>Added more spells than ever before.</li>
-<li>Modified boasts to allow feat progression.</li>
-<li>nerfed spell level powering because speeder ‘level progression’</li>
-<li>changed bow and sling to increase flexibility.</li>
-<li>ensured rules for melee and ranged weapons were differentiated</li>
+<li>Nerfed Battle-axe (slightly).</li>
+<li>Added content to Chaos.</li>
 </ul>
 <h1 id="characters">Characters</h1>
 <p>Characters in Greenhack are human. In debt and often on the run they search for ways to finance their continued existance.</p>
@@ -258,7 +256,7 @@ Warding starts at 17. If Souls is 3+, Warding is reduced to 16. The inverse is t
 <h3 id="hit-protection">Hit Protection</h3>
 <p>Hit Protection (HP) represents a character’s ability to avoid injury in a fight. Once reduced to 0, the character is injured and out of the fight.<br />
 Maximum HP cannot exceed 18.<br />
-Starting HP is equal ot 3d4.</p>
+Starting HP is equal to 3d4.</p>
 <h3 id="skills">Skills</h3>
 <p>List three non-combative skills the character has. These may come up during play to provide advantage in relevent cases.</p>
 <table>
@@ -293,7 +291,7 @@ Starting HP is equal ot 3d4.</p>
 </table>
 <h3 id="language">Language</h3>
 <p>Start knowing d3 languages to be proficient at. If you select the same language twice you can speak <em>and</em> write in it.<br />
-A language can be half know, this being enough ot conduct trade.<br />
+A language can be half know, this being enough to conduct trade.<br />
 All characters must share at least one half known language.<br />
 Language slots can be held in reserve, although a character must declare they know a language the first time it is encountered. Some languages cannot be know this way.</p>
 <h3 id="money">Money</h3>
@@ -520,7 +518,7 @@ Reloading is an exception to the rule. When a character spends their Agility act
 <h3 id="expedition-resources">Expedition Resources</h3>
 <p>Certain items are considered Expedition Resources. If one character is carrying a single quantity of the resource, there is a sufficient amount for the entire group. Creative uses of the resource trigger a roll that might deplete the resource.</p>
 <h1 id="hirelings">Hirelings</h1>
-<p>Hirelings take many forms but are most often used ot carry stuff. They follow because they are paid, which sometimes fluctuates depending on the risk they might be taking on.<br />
+<p>Hirelings take many forms but are most often used to carry stuff. They follow because they are paid, which sometimes fluctuates depending on the risk they might be taking on.<br />
 Hirelings have stats like characters, can carry the same stuff as characters, and can preform the same actions.</p>
 <h3 id="types-or-hirelings">Types or Hirelings</h3>
 <p>Several types of hirelings can be employed. Below are some of the going rates of common hirelings.</p>
@@ -1023,7 +1021,13 @@ To become a pactmage of Earth you must bury your heart in the earth. Your soul c
 <h3 id="chaos">Chaos</h3>
 <p>Chaos is not a cruel god. Mearly a random one. As most people desire a consistencey, a progression in life, Chaos can seem alien; hateful. Pactmages are often shunned, but there is always a place with those looking to change the status quo.<br />
 To become a pactmage of Chaos you must embrace their effects, propegating chaos in your sphere. You must never accept consistency</p>
-<p>Raise Spirit Phycometry Random Spell</p>
+<ul>
+<li><strong>Switcheroo:</strong> L+1 creatures instantly switch places. Determine randomly where they end up.<br />
+</li>
+<li><strong>Reorganize:</strong> Target character’s inventory is randomly shuffled, including held items.<br />
+</li>
+<li><strong>Thaumaturgic Anchor:</strong> Object becomes the target of every spell cast near it.</li>
+</ul>
 <h2 id="additional-spells">Additional Spells</h2>
 <ul>
 <li><strong>Anthropomorphize:</strong> A touched animal either gains human intelligence or human apperance for L days.</li>
@@ -1043,13 +1047,10 @@ To become a pactmage of Chaos you must embrace their effects, propegating chaos 
 <li><strong>Psychometry:</strong> The GM answers L yes or no questions about a touched object.</li>
 <li><strong>Raise Spirit:</strong> The spirit of a dead body manifests and will answer L questions.<br />
 </li>
-<li><strong>Reorganize:</strong> Target character’s inventory is randomly shuffled, including held items.</li>
 <li><strong>Sound:</strong> You create an illusiory sounds that seem to come from a direction of your choice.</li>
 <li><strong>Sculpt Elements:</strong> All inanimate material behaves like clay in your hands.</li>
 <li><strong>Spectical:</strong> A clearly unreal but impressive illusion of your choice appears under your control. It may be up to the size of a palace and has full motion and sound.</li>
-<li><strong>Switcheroo:</strong> L+1 creatures instantly switch places. Determine randomly where they end up.</li>
 <li><strong>Summon Cubes:</strong> L times per round summon or destroy 3 foot cubes of earth. new cubes must be affiedto the earth or to other cubes.</li>
-<li><strong>Thaumaturgic Anchor:</strong> Object becomes the target of every spell cast near it.</li>
 <li><strong>Thicket:</strong> A thicket of trees and dense brush up to L*40’ wide suddenly sprouts up.</li>
 <li><strong>Time Rush:</strong> Time in a 40’ bubble starts moving 10 times faster.</li>
 <li><strong>Vilch:</strong> L visible items teleport to your hands.</li>
@@ -1438,76 +1439,76 @@ Average damage at a certain HD is usually a number of d6s equal to HD.</p>
 <td style="text-align: left;">Riposte twice</td>
 </tr>
 <tr class="even">
+<td style="text-align: left;">Arquibus†‡</td>
+<td style="text-align: left;">210</td>
+<td style="text-align: left;">d12</td>
+<td style="text-align: left;">Ignores all armor. Loading.</td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;">Battle-Axe†</td>
 <td style="text-align: left;">20</td>
 <td style="text-align: left;">d8</td>
 <td style="text-align: left;">May sacrifice 3 damage from an attack to attempt a weapon/shield strip. Roll a second attack - if successful, a weapon or shield can be ripped form the grip of the opponent.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Blunderbuss‡</td>
 <td style="text-align: left;">220</td>
 <td style="text-align: left;">4d6/2d6</td>
 <td style="text-align: left;">4d6 damage when attacking at arm’s-reach. 2d6 at range. Loading.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Club</td>
 <td style="text-align: left;">5</td>
 <td style="text-align: left;">d4</td>
 <td style="text-align: left;">Forgo damage to attempt to stun. After a successful attack, target attempts a PHY Save. Failure results in them losing their next combat round.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Crossbow†‡</td>
 <td style="text-align: left;">35</td>
 <td style="text-align: left;">d12</td>
 <td style="text-align: left;">Ignores light and medium armor. Loading.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Dagger</td>
 <td style="text-align: left;">10</td>
 <td style="text-align: left;">d4</td>
 <td style="text-align: left;">Throwable. Concealable. Usable while grappling.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Espadon†</td>
 <td style="text-align: left;">150</td>
 <td style="text-align: left;">3d6</td>
 <td style="text-align: left;">Upon a killing blow, the wielder can roll another attack. This effect can be triggered multiple times. Cannot be used indoors.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Flail</td>
 <td style="text-align: left;">15</td>
 <td style="text-align: left;">d6</td>
 <td style="text-align: left;">Ignores shields.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Greatsword†</td>
 <td style="text-align: left;">60</td>
 <td style="text-align: left;">d10</td>
 <td style="text-align: left;">Riposte once.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Hand-Axe</td>
 <td style="text-align: left;">10</td>
 <td style="text-align: left;">d6</td>
 <td style="text-align: left;">Throwable. If damage is 5+ in melee the axe bounces allowing another attack for 1 HP.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Javelin</td>
 <td style="text-align: left;">10</td>
 <td style="text-align: left;">d6</td>
 <td style="text-align: left;">Throwable.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Mace</td>
 <td style="text-align: left;">15</td>
 <td style="text-align: left;">d6</td>
 <td style="text-align: left;">Treats armor as one step lower than it is.</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Arquibus†‡</td>
-<td style="text-align: left;">210</td>
-<td style="text-align: left;">d12</td>
-<td style="text-align: left;">Ignores all armor. Loading.</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Pistolet‡</td>
@@ -1543,7 +1544,7 @@ Average damage at a certain HD is usually a number of d6s equal to HD.</p>
 <td style="text-align: left;">Sling‡</td>
 <td style="text-align: left;">1</td>
 <td style="text-align: left;">d4</td>
-<td style="text-align: left;">Can be used ot launch grenades. Can use either STR or MIN.</td>
+<td style="text-align: left;">Can be used to launch grenades. Can use either STR or MIN.</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Spear†</td>
@@ -1553,15 +1554,15 @@ Average damage at a certain HD is usually a number of d6s equal to HD.</p>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Great-Axe†</td>
-<td style="text-align: left;">60</td>
+<td style="text-align: left;">65</td>
 <td style="text-align: left;">2d6</td>
-<td style="text-align: left;">If a 6 is rolled for damage, roll another d6and add the result. This effect can be triggered multiple times. Users Dodging Save +2 if not wearing Medium or Heavy Armor.</td>
+<td style="text-align: left;">If a 6 is rolled for damage, roll another d6 and add the result. This effect can be triggered multiple times. The User’s DOD Save increases by +2</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Warhammer†</td>
 <td style="text-align: left;">35</td>
 <td style="text-align: left;">d10</td>
-<td style="text-align: left;">Those struck are thrown back if unable to make a PHY Save. Use the damage-HD to determine distance.</td>
+<td style="text-align: left;">Those struck are thrown back if unable to make a PHY Save. Use the damage-(2*HD) to determine distance.</td>
 </tr>
 </tbody>
 </table>
@@ -1580,5 +1581,34 @@ Riposte: Melee attacks that are sucessfuly dodged allow the defender to make a c
 <li>Jarrett for motivation</li>
 <li>Andrew, Archer, Ethan, Mia, and Phillip for playtesting</li>
 </ul>
-</body>
+
+<script>
+/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+  this.classList.toggle("active");
+  var dropdownContent = this.nextElementSibling;
+  if (dropdownContent.style.display === "block") {
+  dropdownContent.style.display = "none";
+  } else {
+  dropdownContent.style.display = "block";
+  }
+  });
+}
+</script>
+
+
+
+
+<script type="text/javascript">(function(){window['__CF$cv$params']={r:'6d60eab0c99c644d',m:'pp1vCLcluTKiSDb1eJElN5Qw1lqutEiYiAL93Y7sodM-1643610892-0-Ae3Q2X0ZWcUtgvuhFgLaIMBvXVqor1vsd0e5JngtLUynmsXgJJva/Q7IrEBSj8HkpD5DxosT0IAobm45xSL1fUBjB/zvOitw0QOIdBJKO1y+qx8c/uEdAg/m4WJSIHGxSRmdB/VRmz3Lm9vCgXdtrGmEzXyKjOcX70SSycpi9ewxWmJwD2I9ty2WHWGgoG7mgxnBHhNviHSZQZ6cN5VwDU4=',s:[0x94fee84a21,0x60b86451b1],}})();</script></body>
+
+
+
+
+
+
+
 </html>
